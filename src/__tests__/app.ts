@@ -70,7 +70,7 @@ test("fix blurry images", async (t) => {
 test("update version check", async (t) => {
   const options = {
     files: "./src/utils.ts",
-    from: /(const checkVersion = ")(.*)(")/g,
+    from: /(const checkVersion: string = ")(.*)(")/g,
     to: `$1${appVersion}$3`,
   };
 

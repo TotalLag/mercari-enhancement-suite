@@ -5,9 +5,9 @@ name: build
 
 on:
   push:
-    branches: [ master ]
+    branches: [ main ]
   pull_request:
-    branches: [ master ]
+    branches: [ main ]
 
 jobs:
   build:
@@ -26,7 +26,15 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - run: npm ci
-    - run: npm style
-    - run: npm test
+    - run: npm run style
+    - run: npm run test
     - run: npm run build --if-present
+    - uses: montudor/action-zip@v1
+      with:
+        args: zip -qq -r mercari-enhancement-suite.zip dist
+    - uses: ncipollo/release-action@v1
+      with:
+        tag: "change-me"
+        artifacts: "*.zip"
+        token: ${{ secrets.YOUR_GITHUB_TOKEN }}
     - uses: stefanzweifel/git-auto-commit-action@v4

@@ -1,4 +1,4 @@
-export const checkVersion: string = "1.20.87";
+export const checkVersion: string = "0.0.0.0";
 
 export const sleep = (delay: number) =>
   new Promise((resolve) => setTimeout(resolve, delay));
@@ -28,8 +28,8 @@ export const ToastSuccess = async function (message: string, duration: number) {
       avatar: chrome.runtime.getURL("avatar.png"),
       duration: duration || 5000,
       close: false,
-      gravity: "top",
-      position: "center",
+      gravity: "bottom",
+      position: "left",
       stopOnFocus: true,
       onClick: function () {
         toast.hideToast();
@@ -50,8 +50,8 @@ export const ToastError = async function (message: string, duration: number) {
       destination: "https://github.com/TotalLag/mercari-enhancement-suite",
       newWindow: true,
       close: true,
-      gravity: "top",
-      position: "center",
+      gravity: "bottom",
+      position: "left",
       stopOnFocus: true,
       style: {
         background: "linear-gradient(to right, #9c1c57, #d73a28)",
