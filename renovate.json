@@ -1,0 +1,22 @@
+{
+  "extends": ["config:base"],
+  "packageRules": [
+    {
+      "groupName": "Tailwind CSS",
+      "matchPackageNames": ["tailwindcss"],
+      "matchPackagePrefixes": ["@tailwindcss/"]
+    },
+    {
+      "matchPackagePatterns": ["*"],
+      "excludePackagePrefixes": ["@tailwindcss/"],
+      "updateTypes": ["minor", "patch"],
+      "automerge": true,
+      "groupName": "all non-major dependencies",
+      "groupSlug": "all-minor-patch",
+      "prPriority": -1
+    }
+  ],
+  "prHourlyLimit": 5,
+  "prConcurrentLimit": 10,
+  "rangeStrategy": "bump"
+}
