@@ -1,0 +1,37 @@
+{
+  "name": "Mercari Enhancement Suite",
+  "description": "Community-driven unofficial browser extension for Mercari",
+  "homepage_url": "https://github.com/TotalLag/mercari-enhancement-suite",
+  "version": "1.20.87",
+  "manifest_version": 3,
+  "icons": {
+    "16": "icon16.png",
+    "19": "icon19.png",
+    "38": "icon38.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
+  "action": {
+    "default_title": "Mercari Enhancement Suite"
+  },
+  "content_scripts": [
+    {
+      "run_at": "document_start",
+      "js": ["js/utils.js", "js/compare_versions.js", "js/before.js"],
+      "matches": ["*://*.mercari.com/*"]
+    },
+    {
+      "run_at": "document_idle",
+      "css": ["css/toastify.min.css"],
+      "js": ["js/toastify-js.js", "js/after.js"],
+      "matches": ["*://*.mercari.com/*"]
+    }
+  ],
+  "permissions": ["storage"],
+  "web_accessible_resources": [
+    {
+      "resources": ["js/app.js", "avatar.png"],
+      "matches": ["*://*.mercari.com/*"]
+    }
+  ]
+}

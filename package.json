@@ -1,0 +1,43 @@
+{
+  "name": "mercari-enhancement-suite",
+  "version": "1.20.87",
+  "description": "Community-driven unofficial browser extension for Mercari",
+  "main": "runtime.js",
+  "scripts": {
+    "watch": "webpack --config webpack/webpack.dev.js --watch",
+    "build": "webpack --config webpack/webpack.prod.js",
+    "clean": "rimraf dist",
+    "test": "npx ts-node node_modules/tape/bin/tape 'src/__tests__/*.ts' | npx faucet",
+    "style": "npx prettier --write \"src/**/*.{ts,tsx}\""
+  },
+  "author": "",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/TotalLag/mercari-enhancement-suite"
+  },
+  "dependencies": {
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
+  },
+  "devDependencies": {
+    "@types/chrome": "0.0.158",
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "^17.0.0",
+    "@types/tape": "^4.13.2",
+    "cheerio": "^1.0.0-rc.12",
+    "chrome-api-mock": "^0.0.2",
+    "copy-webpack-plugin": "^9.0.1",
+    "cross-fetch": "^3.1.5",
+    "glob": "^7.1.6",
+    "replace-in-file": "^6.3.5",
+    "rimraf": "^3.0.2 ",
+    "tape": "^5.5.3",
+    "terser-webpack-plugin": "^5.3.3",
+    "ts-loader": "^8.4.0",
+    "typescript": "^4.7.4",
+    "webpack": "^5.61.0",
+    "webpack-cli": "^4.0.0",
+    "webpack-merge": "^5.0.0"
+  }
+}
