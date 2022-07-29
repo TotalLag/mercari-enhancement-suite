@@ -67,7 +67,7 @@ test("fix blurry images", async (t) => {
 //   t.end();
 // });
 
-test("update version check", async (t) => {
+test("update version check", {todo: true}, async (t) => {
   const options = {
     files: "./src/utils.ts",
     from: /(const checkVersion: string = ")(.*)(")/g,
@@ -79,7 +79,7 @@ test("update version check", async (t) => {
   t.end();
 });
 
-test("update manifest", async (t) => {
+test("update manifest", {todo: true}, async (t) => {
   const options = {
     files: ["./public/manifest.json", "./package.json"],
     from: /("version": ")(.*)(")/g,

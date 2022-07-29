@@ -29,13 +29,16 @@ jobs:
     - run: npm run style
     - run: npm run test
     - run: npm run build --if-present
+    - name: get-npm-version
+      id: package-version
+      uses: martinbeentjes/npm-get-version-action@main
     - uses: montudor/action-zip@v1
       with:
-        args: zip -qq -r mercari-enhancement-suite.zip dist
+        args: zip -qq -r mercari-enhancement-suite-${{ steps.package-version.outputs.current-version}}.zip dist
     - uses: ncipollo/release-action@v1
       with:
         allowUpdates: true
-        tag: "change-me"
+        tag: v${{ steps.package-version.outputs.current-version}}
         artifacts: "*.zip"
         token: ${{ secrets.YOUR_GITHUB_TOKEN }}
         body: "This extension will need to be loaded unpacked in developer mode:
