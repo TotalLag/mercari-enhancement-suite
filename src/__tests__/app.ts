@@ -3,6 +3,7 @@ import cheerio from "cheerio";
 import { replaceInFile as replace } from "replace-in-file";
 import { existsSync } from "fs";
 import { writeFile } from "fs/promises";
+import { checkVersion } from "../utils";
 const fetch = require("cross-fetch");
 
 const headers = new fetch.Headers({
@@ -10,7 +11,8 @@ const headers = new fetch.Headers({
     "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; FSL 7.0.6.01001)",
 });
 
-let appVersion: string;
+var appVersion: string;
+var updated: boolean = false;
 
 test("loads the page and find script url", async (t) => {
   const source = await fetch("https://www.mercari.com/sell/", { headers });
@@ -19,6 +21,7 @@ test("loads the page and find script url", async (t) => {
   const scriptTags = $("script[src*=_app]");
   const appURL = scriptTags.first().attr("src");
   appVersion = (appURL?.match(/\/*(?:^v)?\d+(?:\.\d+)+/) ?? "")[0];
+  updated = checkVersion !== appVersion;
 
   t.assert(appURL !== undefined, "Page should have asset URL");
   t.ok(appURL?.includes(appVersion), "Asset URL should contain version");
@@ -67,7 +70,7 @@ test("fix blurry images", async (t) => {
 //   t.end();
 // });
 
-test("update version check", {todo: true}, async (t) => {
+test("update version check", { skip: !updated }, async (t) => {
   const options = {
     files: "./src/utils.ts",
     from: /(const checkVersion: string = ")(.*)(")/g,
@@ -79,7 +82,7 @@ test("update version check", {todo: true}, async (t) => {
   t.end();
 });
 
-test("update manifest", {todo: true}, async (t) => {
+test("update manifest", { skip: !updated }, async (t) => {
   const options = {
     files: ["./public/manifest.json", "./package.json"],
     from: /("version": ")(.*)(")/g,
