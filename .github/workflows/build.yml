@@ -11,22 +11,22 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        node-version: [16.x]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
     - uses: actions/checkout@v2
-    - name: Use Node.js ${{ matrix.node-version }}
+    - name: Use Node.js 16.x
       uses: actions/setup-node@v1
       with:
-        node-version: ${{ matrix.node-version }}
-    - run: npm ci
+        node-version: 16.x
+    - name: Cache dependencies
+      uses: actions/cache@v2
+      with:
+        path: ~/.npm
+        key: npm-${{ hashFiles('package-lock.json') }}
+        restore-keys: npm-
     - run: npm run style
+    - run: npm ci
     - run: npm run test
     - run: npm run build --if-present
     - name: get-npm-version
@@ -35,6 +35,24 @@ jobs:
     - uses: montudor/action-zip@v1
       with:
         args: zip -qq -r mercari-enhancement-suite-${{ steps.package-version.outputs.current-version}}.zip dist
+    - uses: actions/upload-artifact@v2
+      with:
+        name: mercari-enhancement-suite-artifacts
+        path: "*.zip"
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+
+    if: github.ref == 'refs/heads/main'
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/download-artifact@v2
+      with:
+        name: mercari-enhancement-suite-artifacts
+    - name: get-npm-version
+      id: package-version
+      uses: martinbeentjes/npm-get-version-action@main
     - uses: ncipollo/release-action@v1
       with:
         allowUpdates: true
