@@ -29,7 +29,7 @@
     "chrome-api-mock": "^0.0.2",
     "copy-webpack-plugin": "^9.1.0",
     "cross-fetch": "^3.1.5",
-    "glob": "^7.2.3",
+    "glob": "^8.0.3",
     "replace-in-file": "^6.3.5",
     "rimraf": "^3.0.2 ",
     "tape": "^5.5.3",
