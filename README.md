@@ -1,4 +1,6 @@
 # mercari-enhancement-suite
+[![build](https://github.com/TotalLag/mercari-enhancement-suite/actions/workflows/build.yml/badge.svg)](https://github.com/TotalLag/mercari-enhancement-suite/actions/workflows/build.yml)
+
 Community-driven unofficial browser extension for Mercari
 
 ## About

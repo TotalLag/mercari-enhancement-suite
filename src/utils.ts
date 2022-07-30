@@ -29,7 +29,7 @@ export const ToastSuccess = async function (message: string, duration: number) {
       duration: duration || 5000,
       close: false,
       gravity: "bottom",
-      position: "left",
+      position: "right",
       stopOnFocus: true,
       onClick: function () {
         toast.hideToast();
@@ -51,7 +51,7 @@ export const ToastError = async function (message: string, duration: number) {
       newWindow: true,
       close: true,
       gravity: "bottom",
-      position: "left",
+      position: "right",
       stopOnFocus: true,
       style: {
         background: "linear-gradient(to right, #9c1c57, #d73a28)",

@@ -14,13 +14,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
     - name: Use Node.js 16.x
-      uses: actions/setup-node@v1
+      uses: actions/setup-node@v3
       with:
         node-version: 16.x
     - name: Cache dependencies
-      uses: actions/cache@v2
+      uses: actions/cache@v3
       with:
         path: ~/.npm
         key: npm-${{ hashFiles('package-lock.json') }}
@@ -35,7 +35,7 @@ jobs:
     - uses: montudor/action-zip@v1
       with:
         args: zip -qq -r mercari-enhancement-suite-${{ steps.package-version.outputs.current-version}}.zip dist
-    - uses: actions/upload-artifact@v2
+    - uses: actions/upload-artifact@v3
       with:
         name: mercari-enhancement-suite-artifacts
         path: "*.zip"
@@ -46,8 +46,8 @@ jobs:
 
     if: github.ref == 'refs/heads/main'
     steps:
-    - uses: actions/checkout@v2
-    - uses: actions/download-artifact@v2
+    - uses: actions/checkout@v3
+    - uses: actions/download-artifact@v3
       with:
         name: mercari-enhancement-suite-artifacts
     - name: get-npm-version
