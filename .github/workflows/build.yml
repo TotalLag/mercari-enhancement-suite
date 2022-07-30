@@ -18,7 +18,8 @@ jobs:
     - name: Use Node.js 16.x
       uses: actions/setup-node@v3
       with:
-        node-version: 16.x
+        node-version: '16'
+        cache: 'npm'
     - name: Cache dependencies
       uses: actions/cache@v3
       with:
@@ -28,7 +29,7 @@ jobs:
     - run: npm run style
     - run: npm ci
     - run: npm run test
-    - run: npm run build --if-present
+    - run: npm run build
     - name: get-npm-version
       id: package-version
       uses: martinbeentjes/npm-get-version-action@main
@@ -39,6 +40,8 @@ jobs:
       with:
         name: mercari-enhancement-suite-artifacts
         path: "*.zip"
+    - if: github.ref == 'refs/heads/main'
+      uses: stefanzweifel/git-auto-commit-action@v4
 
   deploy:
     needs: build
@@ -69,4 +72,3 @@ jobs:
 
 
 Will work on Microsoft Edge as well."
-    - uses: stefanzweifel/git-auto-commit-action@v4
