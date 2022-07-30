@@ -1,5 +1,3 @@
-export {};
-
 declare global {
   interface Window {
     compareVersions: {
@@ -32,3 +30,5 @@ declare global {
     onClick?: () => void;
   };
 }
+
+export {};
