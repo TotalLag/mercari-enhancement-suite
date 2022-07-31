@@ -12,13 +12,15 @@
 [data-theme="dark"] body,
 [data-theme="dark"] [data-testid="DeliveryMethod"] h5,
 [data-theme="dark"] [data-testid="DeliveryMethod"] p,
-[data-theme="dark"] [class*="ChatItemStatus"] {
+[data-theme="dark"] [class*="ChatItemStatus"],
+[data-theme="dark"] [class*="Footer"] a {
   color: var(--color-grey-4);
 }
 [data-theme="dark"] .privacy_notice table,
 [data-theme="dark"] [class*="Layout__"],
 [data-theme="dark"] [data-testid="PhotoUploadBox"],
-[data-theme="dark"] input[placeholder*="Search"] {
+[data-theme="dark"] input[placeholder*="Search"],
+[data-theme="dark"] [class*="Footer"] {
   background-color: unset !important;
 }
 
@@ -39,8 +41,9 @@
 [data-theme="dark"] h5,
 [data-theme="dark"] h6,
 [data-theme="dark"] [color="white"],
+[data-theme="dark"] [class*="FAQ"],
 [data-theme="dark"] [class*="ChatMessage"],
-[data-theme="dark"] [class*="Footer__Container"] {
+[data-theme="dark"] [class*="Footer"] {
   --color-white: #ffffff;
 }
 
@@ -309,7 +312,7 @@
   --color-blue-2: #dfe2ff;
   --color-blue-3: #9fa8fa;
   --color-blue-4: #3a4cea;
-  --color-blue-5: #252b60;
+  --color-blue-5: #658eff;
   --color-blue-6: #41a7f7;
   --color-blue-7: #031749;
   --color-blue-8: #c9cefa;
