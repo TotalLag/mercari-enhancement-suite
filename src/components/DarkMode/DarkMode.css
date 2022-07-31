@@ -1,0 +1,423 @@
+[data-theme="dark"] [class*="Layout__"], [data-theme="dark"] [data-testid="PhotoUploadBox"] {
+  background-color: unset !important;
+}
+
+[data-theme="dark"] button, [data-theme="dark"] h5, [data-theme="dark"] [class*="ChatMessage"] {
+  --color-white: #ffffff !important;
+}
+
+[data-theme="dark"] [class*="SearchesContainer"], [data-theme="dark"] input:not(:where([type=search])), [data-theme="dark"] textarea, [data-theme="dark"] label[data-testid] > div[class*="Flex"] {
+  background-color: hsl(218 18% 12%);
+}
+
+h5, p {
+  color: var(--color-grey-4)
+}
+
+:root {
+  --color-transparent: transparent;
+  --color-yellow: #ed9f28;
+  --color-yellow-2: #f6c556;
+  --color-yellow-3: #ffdc77;
+  --color-yellow-tint: #ffd36b;
+  --color-light-yellow: #fffae8;
+  --color-paypal-yellow: #ffc43a;
+  --color-green: #7d7f45;
+  --color-green-2: #a2ba38;
+  --color-green-3: #3eb1c8;
+  --color-green-tint: #b4bf71;
+  --color-light-green: #32bf00;
+  --color-pink: #ff8963;
+  --color-pink-tint: #ffcbbd;
+  --color-red: #800024;
+  --color-red-2: #d4001a;
+  --color-red-3: #ee6060;
+  --color-red-4: #e0495b;
+  --color-red-5: #cc0000;
+  --color-light-red: #feeeee;
+  --color-red-tint: #c44749;
+  --color-blue: #10408e;
+  --color-mercari-blue: #5356ee;
+  --color-mercari-medium-blue: #658eff;
+  --color-blue-1: #f3f3fe;
+  --color-blue-2: #dfe2ff;
+  --color-blue-3: #9fa8fa;
+  --color-blue-4: #3a4cea;
+  --color-blue-5: #252b60;
+  --color-blue-6: #41a7f7;
+  --color-blue-7: #031749;
+  --color-blue-8: #c9cefa;
+  --color-blue-9: #000066;
+  --color-blue-tint: #87a7ff;
+  --color-light-blue: #e6ebfe;
+  --color-light-blue-2: #d3d7fd;
+  --color-alpha-mercari-blue: rgba(83, 86, 238, 0.2);
+  --color-alpha-mercari-blue-5: rgba(83, 86, 238, 0.05);
+  --color-alpha-mercari-blue-10: rgba(83, 86, 238, 0.1);
+  --color-teal: #7298a5;
+  --color-lavender: #f2f3fe;
+  --color-white: #ffffff;
+  --color-white-2: #f4f3f5;
+  --color-white-3: #edeffd;
+  --color-black: #000000;
+  --color-black-2: #525252;
+  --color-black-3: #0b0b0b;
+  --color-black-4: #434343;
+  --color-alpha-black-15: rgba(0, 0, 0, 0.15);
+  --color-alpha-black-30: rgba(0, 0, 0, 0.3);
+  --color-alpha-black-40: rgba(0, 0, 0, 0.4);
+  --color-alpha-black-60: rgba(0, 0, 0, 0.6);
+  --color-alpha-black-70: rgba(0, 0, 0, 0.7);
+  --color-alpha-grey-28: rgba(76, 76, 76, 0.28);
+  --color-alpha-grey-60: rgba(76, 76, 76, 0.6);
+  --color-alpha-grey-80: rgba(76, 76, 76, 0.8);
+  --color-alpha-red: rgba(229, 42, 48, 0.11);
+  --color-alpha-green: rgba(217, 227, 70, 0.1);
+  --color-grey-1: #f5f5f6;
+  --color-grey-2: #ecedf1;
+  --color-grey-3: #cdced2;
+  --color-grey-4: #222222;
+  --color-grey-5: #6b6b6b;
+  --color-grey-6: #e5e5e5;
+  --color-grey-7: #a6a6a6;
+  --color-grey-8: #4f4f4f;
+  --color-grey-9: #6b6b6b;
+  --color-light-grey: #f4f3f5;
+  --color-light-grey-2: #c6c7cc;
+  --color-light-grey-3: #e9eaef;
+  --color-light-grey-4: #f2f3fe;
+  --color-orange: #f67900;
+  --color-orange-2: #f47900;
+  --color-light-orange: #fff1e5;
+  --color-alpha-orange: rgba(252, 221, 184, 0.2);
+  --color-alpha-orange-80: rgba(246, 121, 0, 0.8);
+  --color-light-brown: rgba(218, 139, 93, 0.2);
+  --color-pink: #f67b68;
+  --color-pink-2: #f18195;
+  --color-light-pink: #fee9e6;
+  --color-light-pink-2: #faeaed;
+  --color-paypal: #ffc439;
+  --color-paypal-black: #2c2e2f;
+  --color-facebook: #1877F2;
+  --color-halloween-purple: #c7a8ef;
+  --color-beige: #f3f1ed;
+  --color-digital-gray-1: #29303c;
+  --color-digital-gray-2: #323a49;
+  --color-digital-gray-3: #434c5e;
+  --color-digital-gray-4: #5f697d;
+  --color-digital-gray-5: #9faac2;
+  --color-digital-gray-6: #e6e7e9;
+  --color-digital-gray-7: #f2f4f7;
+  --color-digital-gray-8: #2d3138;
+  --color-digital-red-1: #e83f53;
+  --color-digital-home-hero-bg: #4b40b8;
+  --color-digital-blue-gradient: linear-gradient( 90deg, #5e6ef2 -0.17%, #8453f2 99.98% );
+  --hover-mercari-blue: #6b79f3;
+  --hover-mercari-blue-2: #7884f4;
+  --hover-grey: #e3e4e7;
+  --hover-light-grey: #f9f9fe;
+  --hover-white: #f5f5f5;
+  --hover-dark: rgba(255, 255, 255, 0.04);
+  --hover-light-grey-2: #f2f3fe;
+  --hover-orange: #f68e29;
+  --hover-paypal: #ffd269;
+  --hover-plain: #929cf6;
+  --hover-facebook: #1569d5;
+  --focus-facebook: #1569d5;
+  --hover-underlay: rgba(205, 206, 210, 0.2);
+}
+
+@media(prefers-color-scheme: dark) {
+  :root {
+    --color-transparent: transparent;
+    --color-yellow: #ed9f28;
+    --color-yellow-2: #f6c556;
+    --color-yellow-3: #ffdc77;
+    --color-yellow-tint: #ffd36b;
+    --color-light-yellow: #fffae8;
+    --color-paypal-yellow: #ffc43a;
+    --color-green: #7d7f45;
+    --color-green-2: #a2ba38;
+    --color-green-3: #3eb1c8;
+    --color-green-tint: #b4bf71;
+    --color-light-green: #32bf00;
+    --color-pink: #ff8963;
+    --color-pink-tint: #ffcbbd;
+    --color-red: #800024;
+    --color-red-2: #d4001a;
+    --color-red-3: #ee6060;
+    --color-red-4: #e0495b;
+    --color-red-5: #cc0000;
+    --color-light-red: #feeeee;
+    --color-red-tint: #c44749;
+    --color-blue: #10408e;
+    --color-mercari-blue: hsl(198 93% 40%);
+    --color-mercari-medium-blue: #658eff;
+    --color-blue-1: #f3f3fe;
+    --color-blue-2: #dfe2ff;
+    --color-blue-3: #9fa8fa;
+    --color-blue-4: #3a4cea;
+    --color-blue-5: #252b60;
+    --color-blue-6: #41a7f7;
+    --color-blue-7: #031749;
+    --color-blue-8: #c9cefa;
+    --color-blue-9: #000066;
+    --color-blue-tint: #87a7ff;
+    --color-light-blue: #e6ebfe;
+    --color-light-blue-2: #d3d7fd;
+    --color-alpha-mercari-blue: rgba(83, 86, 238, 0.2);
+    --color-alpha-mercari-blue-5: rgba(83, 86, 238, 0.05);
+    --color-alpha-mercari-blue-10: rgba(83, 86, 238, 0.1);
+    --color-teal: #7298a5;
+    --color-lavender: #f2f3fe;
+    --color-white: hsl(220 18% 20%);
+    --color-white-2: #f4f3f5;
+    --color-white-3: #edeffd;
+    --color-black: hsl(220 13% 69%);
+    --color-black-2: #525252;
+    --color-black-3: #0b0b0b;
+    --color-black-4: #434343;
+    --color-alpha-black-15: rgba(0, 0, 0, 0.15);
+    --color-alpha-black-30: rgba(0, 0, 0, 0.3);
+    --color-alpha-black-40: rgba(0, 0, 0, 0.4);
+    --color-alpha-black-60: rgba(0, 0, 0, 0.6);
+    --color-alpha-black-70: rgba(0, 0, 0, 0.7);
+    --color-alpha-grey-28: rgba(76, 76, 76, 0.28);
+    --color-alpha-grey-60: rgba(76, 76, 76, 0.6);
+    --color-alpha-grey-80: rgba(76, 76, 76, 0.8);
+    --color-alpha-red: rgba(229, 42, 48, 0.11);
+    --color-alpha-green: rgba(217, 227, 70, 0.1);
+    --color-grey-1: hsl(219 18% 15%);
+    --color-grey-2: hsl(220 17% 17%);
+    --color-grey-3: hsl(220 13% 49%);
+    --color-grey-4: hsl(220 13% 69%);
+    --color-grey-5: #6b6b6b;
+    --color-grey-6: #e5e5e5;
+    --color-grey-7: #a6a6a6;
+    --color-grey-8: #4f4f4f;
+    --color-grey-9: #6b6b6b;
+    --color-light-grey: #f4f3f5;
+    --color-light-grey-2: #c6c7cc;
+    --color-light-grey-3: #e9eaef;
+    --color-light-grey-4: hsl(219 18% 15%);
+    --color-orange: #f67900;
+    --color-orange-2: #f47900;
+    --color-light-orange: #fff1e5;
+    --color-alpha-orange: rgba(252, 221, 184, 0.2);
+    --color-alpha-orange-80: rgba(246, 121, 0, 0.8);
+    --color-light-brown: rgba(218, 139, 93, 0.2);
+    --color-pink: #f67b68;
+    --color-pink-2: #f18195;
+    --color-light-pink: #fee9e6;
+    --color-light-pink-2: #faeaed;
+    --color-paypal: #ffc439;
+    --color-paypal-black: #2c2e2f;
+    --color-facebook: #1877F2;
+    --color-halloween-purple: #c7a8ef;
+    --color-beige: #f3f1ed;
+    --color-digital-gray-1: #29303c;
+    --color-digital-gray-2: #323a49;
+    --color-digital-gray-3: #434c5e;
+    --color-digital-gray-4: #5f697d;
+    --color-digital-gray-5: #9faac2;
+    --color-digital-gray-6: #e6e7e9;
+    --color-digital-gray-7: #f2f4f7;
+    --color-digital-gray-8: #2d3138;
+    --color-digital-red-1: #e83f53;
+    --color-digital-home-hero-bg: #4b40b8;
+    --color-digital-blue-gradient: linear-gradient( 90deg, #5e6ef2 -0.17%, #8453f2 99.98% );
+    --hover-mercari-blue: #6b79f3;
+    --hover-mercari-blue-2: #7884f4;
+    --hover-grey: #e3e4e7;
+    --hover-light-grey: #f9f9fe;
+    --hover-white: hsl(219 18% 15%);
+    --hover-dark: rgba(255, 255, 255, 0.04);
+    --hover-light-grey-2: #f2f3fe;
+    --hover-orange: #f68e29;
+    --hover-paypal: #ffd269;
+    --hover-plain: #929cf6;
+    --hover-facebook: #1569d5;
+    --focus-facebook: #1569d5;
+    --hover-underlay: rgba(205, 206, 210, 0.2);
+  }
+}
+
+[data-theme="dark"] {
+  --color-transparent: transparent;
+  --color-yellow: #ed9f28;
+  --color-yellow-2: #f6c556;
+  --color-yellow-3: #ffdc77;
+  --color-yellow-tint: #ffd36b;
+  --color-light-yellow: #fffae8;
+  --color-paypal-yellow: #ffc43a;
+  --color-green: #7d7f45;
+  --color-green-2: #a2ba38;
+  --color-green-3: #3eb1c8;
+  --color-green-tint: #b4bf71;
+  --color-light-green: #32bf00;
+  --color-pink: #ff8963;
+  --color-pink-tint: #ffcbbd;
+  --color-red: #800024;
+  --color-red-2: #d4001a;
+  --color-red-3: #ee6060;
+  --color-red-4: #e0495b;
+  --color-red-5: #cc0000;
+  --color-light-red: #feeeee;
+  --color-red-tint: #c44749;
+  --color-blue: #10408e;
+  --color-mercari-blue: hsl(198 93% 40%);
+  --color-mercari-medium-blue: #658eff;
+  --color-blue-1: #f3f3fe;
+  --color-blue-2: #dfe2ff;
+  --color-blue-3: #9fa8fa;
+  --color-blue-4: #3a4cea;
+  --color-blue-5: #252b60;
+  --color-blue-6: #41a7f7;
+  --color-blue-7: #031749;
+  --color-blue-8: #c9cefa;
+  --color-blue-9: #000066;
+  --color-blue-tint: #87a7ff;
+  --color-light-blue: #e6ebfe;
+  --color-light-blue-2: #d3d7fd;
+  --color-alpha-mercari-blue: rgba(83, 86, 238, 0.2);
+  --color-alpha-mercari-blue-5: rgba(83, 86, 238, 0.05);
+  --color-alpha-mercari-blue-10: rgba(83, 86, 238, 0.1);
+  --color-teal: #7298a5;
+  --color-lavender: #f2f3fe;
+  --color-white: hsl(220 18% 20%);
+  --color-white-2: #f4f3f5;
+  --color-white-3: #edeffd;
+  --color-black: hsl(220 13% 69%);
+  --color-black-2: #525252;
+  --color-black-3: #0b0b0b;
+  --color-black-4: #434343;
+  --color-alpha-black-15: rgba(0, 0, 0, 0.15);
+  --color-alpha-black-30: rgba(0, 0, 0, 0.3);
+  --color-alpha-black-40: rgba(0, 0, 0, 0.4);
+  --color-alpha-black-60: rgba(0, 0, 0, 0.6);
+  --color-alpha-black-70: rgba(0, 0, 0, 0.7);
+  --color-alpha-grey-28: rgba(76, 76, 76, 0.28);
+  --color-alpha-grey-60: rgba(76, 76, 76, 0.6);
+  --color-alpha-grey-80: rgba(76, 76, 76, 0.8);
+  --color-alpha-red: rgba(229, 42, 48, 0.11);
+  --color-alpha-green: rgba(217, 227, 70, 0.1);
+  --color-grey-1: hsl(219 18% 15%);
+  --color-grey-2: hsl(220 17% 17%);
+  --color-grey-3: hsl(220 13% 49%);
+  --color-grey-4: hsl(220 13% 69%);
+  --color-grey-5: #6b6b6b;
+  --color-grey-6: #e5e5e5;
+  --color-grey-7: #a6a6a6;
+  --color-grey-8: #4f4f4f;
+  --color-grey-9: #6b6b6b;
+  --color-light-grey: #f4f3f5;
+  --color-light-grey-2: #c6c7cc;
+  --color-light-grey-3: #e9eaef;
+  --color-light-grey-4: hsl(219 18% 15%);
+  --color-orange: #f67900;
+  --color-orange-2: #f47900;
+  --color-light-orange: #fff1e5;
+  --color-alpha-orange: rgba(252, 221, 184, 0.2);
+  --color-alpha-orange-80: rgba(246, 121, 0, 0.8);
+  --color-light-brown: rgba(218, 139, 93, 0.2);
+  --color-pink: #f67b68;
+  --color-pink-2: #f18195;
+  --color-light-pink: #fee9e6;
+  --color-light-pink-2: #faeaed;
+  --color-paypal: #ffc439;
+  --color-paypal-black: #2c2e2f;
+  --color-facebook: #1877F2;
+  --color-halloween-purple: #c7a8ef;
+  --color-beige: #f3f1ed;
+  --color-digital-gray-1: #29303c;
+  --color-digital-gray-2: #323a49;
+  --color-digital-gray-3: #434c5e;
+  --color-digital-gray-4: #5f697d;
+  --color-digital-gray-5: #9faac2;
+  --color-digital-gray-6: #e6e7e9;
+  --color-digital-gray-7: #f2f4f7;
+  --color-digital-gray-8: #2d3138;
+  --color-digital-red-1: #e83f53;
+  --color-digital-home-hero-bg: #4b40b8;
+  --color-digital-blue-gradient: linear-gradient( 90deg, #5e6ef2 -0.17%, #8453f2 99.98% );
+  --hover-mercari-blue: #6b79f3;
+  --hover-mercari-blue-2: #7884f4;
+  --hover-grey: #e3e4e7;
+  --hover-light-grey: #f9f9fe;
+  --hover-white: hsl(219 18% 15%);
+  --hover-dark: rgba(255, 255, 255, 0.04);
+  --hover-light-grey-2: #f2f3fe;
+  --hover-orange: #f68e29;
+  --hover-paypal: #ffd269;
+  --hover-plain: #929cf6;
+  --hover-facebook: #1569d5;
+  --focus-facebook: #1569d5;
+  --hover-underlay: rgba(205, 206, 210, 0.2);
+}
+
+/* Custom Dark Mode Toggle Element */
+
+#clientjack {
+  position: relative;
+  display: flex;
+}
+
+.toggle-theme-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.toggle-theme-wrapper span {
+  font-size: 20px;
+  margin: 0 4px;
+}
+
+.toggle-theme {
+  position: relative;
+  display: inline-block;
+  height: 28px;
+  width: 50px;
+}
+
+.toggle-theme input {
+  display: none;
+}
+
+.slider {
+  background-color: #ccc;
+  position: absolute;
+  cursor: pointer;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  transition: 0.2s;
+}
+
+.slider:before {
+  background-color: #fff;
+  bottom: 4px;
+  content: "";
+  height: 20px;
+  left: 4px;
+  position: absolute;
+  transition: 0.4s;
+  width: 20px;
+}
+
+input:checked + .slider:before {
+  transform: translateX(22px);
+}
+
+input:checked + .slider {
+  background-color: cornflowerblue;
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}

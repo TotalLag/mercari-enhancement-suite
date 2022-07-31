@@ -15,16 +15,20 @@ import { checkVersion, getFromStorage, ToastSuccess } from "./utils";
   console.log(`load: ${loaded}`);
 
   if (loaded) {
-    let s = document.createElement("script");
-    s.src = chrome.runtime.getURL("js/app.js");
-    s.defer = true;
-    s.onload = function () {
-      s.remove();
+    const app = document.createElement("script");
+    app.src = chrome.runtime.getURL("js/app.js");
+    app.defer = true;
+    app.onload = function () {
+      app.remove();
     };
-    (document.head || document.documentElement).appendChild(s);
+    (document.head || document.documentElement).appendChild(app);
   }
 
   document.addEventListener("ping", async function (e: Event) {
-    await ToastSuccess((<CustomEvent>e).detail, 2500);
+    switch ((<CustomEvent>e).detail.type) {
+      case "toast":
+        await ToastSuccess((<CustomEvent>e).detail.msg, 2500);
+        break;
+    }
   });
 })();

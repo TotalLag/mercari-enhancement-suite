@@ -38,7 +38,7 @@ test("fix blurry images", async (t) => {
   const options = {
     files: "./public/js/app.js",
     from: /(e.next=5,)(y\(n,r,i\);)/g,
-    to: `$1r.width*=7,r.height*=7,document.dispatchEvent(new CustomEvent("ping", { detail: "higher resolution captured ✅" })),$2`,
+    to: `$1r.width*=7,r.height*=7,document.dispatchEvent(new CustomEvent("ping", { detail: { type: "toast", msg: "higher resolution captured ✅" } })),$2`,
   };
 
   const results = await replace(options);
@@ -48,7 +48,7 @@ test("fix blurry images", async (t) => {
 
 // test("piggyback ready check", async (t) => {
 //   const options = {
-//     files: "app.js",
+//     files: "./public/js/app.js",
 //     from: /({"complete"===document.readyState&&\(clearInterval\(readyStateCheckInterval\),searchAnimations\(\))(\)})/g,
 //     to: "$1,myCustomFunc()$2",
 //   };
@@ -60,9 +60,9 @@ test("fix blurry images", async (t) => {
 
 // test("insert our functions", async (t) => {
 //   const options = {
-//     files: "app.js",
+//     files: "./public/js/app.js",
 //     from: /(return ShapePropertyFactory;case"matrix":return Matrix}})(function checkReady\(\))/g,
-//     to: "$1function myCustomFunc(){}$2",
+//     to: `$1function myCustomFunc(){document.dispatchEvent(new CustomEvent("ping", { detail: { type: "load" } }))}$2`,
 //   };
 
 //   const results = await replace(options);

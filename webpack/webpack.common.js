@@ -13,10 +13,16 @@ module.exports = {
       import: path.join(srcDir, "after.ts"),
       dependOn: "utils",
     },
+    client: {
+      import: path.join(srcDir, "client.tsx"),
+    },
+    background: {
+      import: path.join(srcDir, "background.ts"),
+    },
   },
   output: {
-    path: path.join(__dirname, "../dist/js"),
-    filename: "[name].js",
+    path: path.join(__dirname, "../dist"),
+    filename: "js/[name].js",
   },
   optimization: {
     splitChunks: {
@@ -29,6 +35,11 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.css?$/,
+        use: ["style-loader", "css-loader"],
+        exclude: /node_modules/,
+      },
+      {
         test: /\.tsx?$/,
         use: "ts-loader",
         exclude: /node_modules/,
@@ -40,7 +51,7 @@ module.exports = {
   },
   plugins: [
     new CopyPlugin({
-      patterns: [{ from: ".", to: "../", context: "public" }],
+      patterns: [{ from: ".", to: "./", context: "public" }],
       options: {},
     }),
   ],

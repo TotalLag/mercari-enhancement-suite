@@ -14,6 +14,9 @@
   "action": {
     "default_title": "Mercari Enhancement Suite"
   },
+  "background": {
+    "service_worker": "js/background.js"
+  },
   "content_scripts": [
     {
       "run_at": "document_start",
@@ -27,10 +30,11 @@
       "matches": ["*://*.mercari.com/*"]
     }
   ],
-  "permissions": ["storage"],
+  "permissions": ["storage", "scripting", "tabs"],
+  "host_permissions": ["*://*.mercari.com/*"],
   "web_accessible_resources": [
     {
-      "resources": ["js/app.js", "avatar.png"],
+      "resources": ["js/vendor.js", "js/client.js", "js/app.js", "avatar.png"],
       "matches": ["*://*.mercari.com/*"]
     }
   ]
