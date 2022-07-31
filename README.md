@@ -32,6 +32,8 @@ Obviously please report bugs to Mercari first: contact@mercari.com - I am not af
 
 ## Future
 Random annoyances I'd like to tackle in no particular order:
+- [x] Higher resolution uploads
 - [ ] Stop autofill
 - [ ] Fix picture sorting
 - [ ] Keep weight the same
+- [x] Dark mode!
