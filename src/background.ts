@@ -29,7 +29,7 @@ const inject_react = () => {
 };
 
 chrome.tabs.onUpdated.addListener(function (tabId, changeInfo, tab) {
-  if (changeInfo.status === "complete" && tab?.url?.includes(".mercari.")) {
+  if (tab?.url?.includes(".mercari.")) {
     chrome.scripting.executeScript(
       {
         target: { tabId },

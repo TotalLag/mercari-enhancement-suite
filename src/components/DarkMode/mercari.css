@@ -11,12 +11,14 @@
 [data-theme="dark"] table th,
 [data-theme="dark"] body,
 [data-theme="dark"] [data-testid="DeliveryMethod"] h5,
-[data-theme="dark"] [data-testid="DeliveryMethod"] p {
+[data-theme="dark"] [data-testid="DeliveryMethod"] p,
+[data-theme="dark"] [class*="ChatItemStatus"] {
   color: var(--color-grey-4);
 }
 [data-theme="dark"] .privacy_notice table,
 [data-theme="dark"] [class*="Layout__"],
-[data-theme="dark"] [data-testid="PhotoUploadBox"] {
+[data-theme="dark"] [data-testid="PhotoUploadBox"],
+[data-theme="dark"] input[placeholder*="Search"] {
   background-color: unset !important;
 }
 
@@ -24,7 +26,8 @@
 [data-theme="dark"]
   input:not(:where([type="search"])):not(:where([type="checkbox"])):not(:where([placeholder*="Search"])),
 [data-theme="dark"] textarea,
-[data-theme="dark"] label[data-testid] > div[class*="Flex"] {
+[data-theme="dark"] label[data-testid] > div[class*="Flex"],
+[data-theme="dark"] div[color="white"] {
   background-color: hsl(218 18% 12%);
 }
 
@@ -35,6 +38,7 @@
 [data-theme="dark"] h4,
 [data-theme="dark"] h5,
 [data-theme="dark"] h6,
+[data-theme="dark"] [color="white"],
 [data-theme="dark"] [class*="ChatMessage"],
 [data-theme="dark"] [class*="Footer__Container"] {
   --color-white: #ffffff;
@@ -324,7 +328,7 @@
   --color-black: hsl(220 13% 69%);
   --color-black-2: #525252;
   --color-black-3: #0b0b0b;
-  --color-black-4: #434343;
+  --color-black-4: currentcolor;
   --color-alpha-black-15: rgba(0, 0, 0, 0.15);
   --color-alpha-black-30: rgba(0, 0, 0, 0.3);
   --color-alpha-black-40: rgba(0, 0, 0, 0.4);
