@@ -8,7 +8,7 @@
     "build": "webpack --config webpack/webpack.prod.js",
     "clean": "rimraf dist && npx ts-node node_modules/tape/bin/tape 'src/clean.ts' | npx faucet",
     "test": "npx ts-node node_modules/tape/bin/tape 'src/__tests__/*.ts' | npx faucet",
-    "style": "npx prettier --write \"src/**/*.{ts,tsx}\""
+    "style": "npx prettier --write \"src/**/*.{ts,tsx,css}\""
   },
   "author": "Chris Phan <chris@phan.cx>",
   "license": "MIT",
