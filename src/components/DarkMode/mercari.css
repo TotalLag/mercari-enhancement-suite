@@ -45,7 +45,8 @@
 [data-theme="dark"] [color="white"],
 [data-theme="dark"] [class*="FAQ"],
 [data-theme="dark"] [class*="ChatMessage"],
-[data-theme="dark"] [class*="Footer"] {
+[data-theme="dark"] [class*="Footer"],
+[data-theme="dark"] a[class*="BaseButton"] {
   --color-white: #ffffff;
 }
 
