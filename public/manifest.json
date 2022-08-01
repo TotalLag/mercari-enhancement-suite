@@ -34,7 +34,13 @@
   "host_permissions": ["*://*.mercari.com/*"],
   "web_accessible_resources": [
     {
-      "resources": ["js/vendor.js", "js/client.js", "js/app.js", "avatar.png"],
+      "resources": [
+        "js/vendor.js",
+        "css/client.css",
+        "js/client.js",
+        "js/app.js",
+        "avatar.png"
+      ],
       "matches": ["*://*.mercari.com/*"]
     }
   ]

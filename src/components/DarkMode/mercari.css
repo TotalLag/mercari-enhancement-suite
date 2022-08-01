@@ -13,7 +13,8 @@
 [data-theme="dark"] [data-testid="DeliveryMethod"] h5,
 [data-theme="dark"] [data-testid="DeliveryMethod"] p,
 [data-theme="dark"] [class*="ChatItemStatus"],
-[data-theme="dark"] [class*="Footer"] a {
+[data-theme="dark"] [class*="Footer"] a,
+[data-theme="dark"] button:not(:where([aria-haspopup="true"])):not(:where([class*="LightHeader"])):not(:where([class*="BaseButton"])) {
   color: var(--color-grey-4);
 }
 [data-theme="dark"] .privacy_notice table,
@@ -45,6 +46,10 @@
 [data-theme="dark"] [class*="ChatMessage"],
 [data-theme="dark"] [class*="Footer"] {
   --color-white: #ffffff;
+}
+
+* {
+  transition: background-color 0.12s;
 }
 
 :root {

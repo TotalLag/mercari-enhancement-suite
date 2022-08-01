@@ -9,6 +9,19 @@ const inject_react = () => {
   };
   (document.head || document.documentElement).appendChild(vendor);
 
+  document
+    .querySelectorAll("#client-style")
+    ?.forEach((element, index, array) => {
+      if (array.length > index + 1) {
+        element.remove();
+      }
+    });
+  const stylez = document.createElement("link");
+  stylez.id = "client-style";
+  stylez.rel = "stylesheet";
+  stylez.href = chrome.runtime.getURL("css/client.css");
+  (document.head || document.documentElement).appendChild(stylez);
+
   const react_entry_point = document.createElement("div");
   react_entry_point.id = "clientjack";
 
@@ -32,7 +45,7 @@ const inject_react = () => {
 };
 
 chrome.tabs.onUpdated.addListener(function (tabId, changeInfo, tab) {
-  if (tab?.url?.includes(".mercari.") && changeInfo.status === 'complete') {
+  if (tab?.url?.includes(".mercari.") && changeInfo.status === "complete") {
     chrome.scripting.executeScript(
       {
         target: { tabId },
