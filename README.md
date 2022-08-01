@@ -8,6 +8,7 @@ Mercari is a great way to buy and sell items. You can find just about anything o
 
 ![ss1](https://user-images.githubusercontent.com/1744428/181827628-040871f6-af32-432b-98e9-89b2b262e3ea.png)
 ![ss4](https://user-images.githubusercontent.com/1744428/181829198-77d09489-0009-490d-8c7f-3824c9c06bc4.png)
+![image](https://user-images.githubusercontent.com/1744428/182087504-2ec6992b-eb4e-4bd9-8a56-36b0aaf9865c.png)
 
 
 ## Why
