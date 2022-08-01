@@ -3,7 +3,10 @@ console.log("background.js executed");
 const inject_react = () => {
   const vendor = document.createElement("script");
   vendor.src = chrome.runtime.getURL("js/vendor.js");
-  vendor.defer = false;
+  vendor.defer = true;
+  vendor.onload = function () {
+    vendor.remove();
+  };
   (document.head || document.documentElement).appendChild(vendor);
 
   const react_entry_point = document.createElement("div");
@@ -29,7 +32,7 @@ const inject_react = () => {
 };
 
 chrome.tabs.onUpdated.addListener(function (tabId, changeInfo, tab) {
-  if (tab?.url?.includes(".mercari.")) {
+  if (tab?.url?.includes(".mercari.") && changeInfo.status === 'complete') {
     chrome.scripting.executeScript(
       {
         target: { tabId },
