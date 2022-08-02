@@ -1,4 +1,4 @@
-export const checkVersion: string = "1.20.89";
+export const checkVersion: string = "1.20.90";
 
 export const sleep = (delay: number) =>
   new Promise((resolve) => setTimeout(resolve, delay));
@@ -47,7 +47,8 @@ export const ToastError = async function (message: string, duration: number) {
       text: `${message}`,
       avatar: chrome.runtime.getURL("avatar.png"),
       duration: duration || 5000,
-      destination: "https://github.com/TotalLag/mercari-enhancement-suite/releases",
+      destination:
+        "https://github.com/TotalLag/mercari-enhancement-suite/releases",
       newWindow: true,
       close: true,
       gravity: "bottom",
