@@ -28,7 +28,7 @@ const inject_react = () => {
   const mercari_app = (document.querySelector(
     "div[class*=StickyHeaderContainer]"
   ) ||
-    document.querySelector("div[class*=StickyContainer]") ||
+    document.querySelector("[class*=StickyContainer]") ||
     document.querySelector("div[class*=Container][style*='width: 100%']") ||
     document.querySelector("#__next"))!;
 

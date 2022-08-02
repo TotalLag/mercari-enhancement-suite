@@ -14,7 +14,7 @@ import { checkVersion, getFromStorage, ToastSuccess } from "./utils";
   );
   console.log(`load: ${loaded}`);
 
-  if (loaded) {
+  if (loaded && !window.location.href.includes("help_center")) {
     const app = document.createElement("script");
     app.src = chrome.runtime.getURL("js/app.js");
     app.defer = true;

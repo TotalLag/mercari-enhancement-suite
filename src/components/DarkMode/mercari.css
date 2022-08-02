@@ -27,6 +27,7 @@
 }
 
 [data-theme="dark"] [class*="SearchesContainer"],
+[data-theme="dark"] .table-row,
 [data-theme="dark"]
   input:not(:where([type="search"])):not(:where([type="checkbox"])):not(:where([placeholder*="Search"])),
 [data-theme="dark"] textarea,
