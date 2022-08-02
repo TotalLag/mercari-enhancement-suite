@@ -47,7 +47,7 @@ export const ToastError = async function (message: string, duration: number) {
       text: `${message}`,
       avatar: chrome.runtime.getURL("avatar.png"),
       duration: duration || 5000,
-      destination: "https://github.com/TotalLag/mercari-enhancement-suite",
+      destination: "https://github.com/TotalLag/mercari-enhancement-suite/releases",
       newWindow: true,
       close: true,
       gravity: "bottom",
