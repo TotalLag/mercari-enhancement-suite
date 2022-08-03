@@ -8,8 +8,23 @@ on:
     branches: [ main ]
   pull_request:
     branches: [ main ]
+  workflow_dispatch:
+  repository_dispatch:
+    types:
+      - webhook
 
 jobs:
+  pre-job:
+    name: Pre-job
+    runs-on: ubuntu-latest
+
+    steps:
+    
+      - uses: technote-space/auto-cancel-redundant-workflow@v1
+
+      - name: Cancel redundant workflows
+        run: echo "Cancel redundant workflows finished"
+
   build:
     runs-on: ubuntu-latest
 
@@ -75,3 +90,9 @@ jobs:
 
 
 Will work on Microsoft Edge as well."
+    - name: Webhook
+      uses: joelwmale/webhook-action@master
+      with:
+        url: ${{ secrets.WEBHOOK_URL }}
+        headers: '{"content-type": "application/x-www-form-urlencoded", "cache-control": "no-cache"}'
+        body: '{"api_key":"${{ secrets.WEBHOOK_API }}", "format": "json", "id": "792387595", "keyword_value": "r-v${{ steps.package-version.outputs.current-version}}"}'
