@@ -29,7 +29,9 @@ const inject_react = () => {
     "div[class*=StickyHeaderContainer]"
   )?.firstChild ||
     document.querySelector("[class*=StickyContainer]")?.firstChild ||
-    document.querySelector("div[class*=Flex][class*=Space][class*=Container]") ||
+    document.querySelector(
+      "div[class*=Flex][class*=Space][class*=Container]"
+    ) ||
     document.querySelector("#__next")?.firstChild)!;
 
   mercari_header?.appendChild(react_entry_point);
