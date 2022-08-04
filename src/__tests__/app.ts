@@ -62,7 +62,7 @@ test("fix blurry images", async (t) => {
   const options = {
     files: "./public/js/app.js",
     from: /(e.next=5,)(y\(n,r,i\);)/g,
-    to: `$1r.width*=7,r.height*=7,document.dispatchEvent(new CustomEvent("ping", { detail: { type: "toast", msg: "higher resolution captured ✅" } })),$2`,
+    to: `$1r.width=n.width,r.height=n.height,document.dispatchEvent(new CustomEvent("ping", { detail: { type: "toast", msg: "higher resolution captured ✅" } })),$2`,
   };
 
   const results = await replace(options);
