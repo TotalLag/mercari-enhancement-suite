@@ -25,14 +25,13 @@ const inject_react = () => {
   const react_entry_point = document.createElement("div");
   react_entry_point.id = "clientjack";
 
-  const mercari_app = (document.querySelector(
+  const mercari_header = (document.querySelector(
     "div[class*=StickyHeaderContainer]"
-  ) ||
-    document.querySelector("[class*=StickyContainer]") ||
-    document.querySelector("div[class*=Container][style*='width: 100%']") ||
-    document.querySelector("#__next"))!;
+  )?.firstChild ||
+    document.querySelector("[class*=StickyContainer]")?.firstChild ||
+    document.querySelector("div[class*=Flex][class*=Space][class*=Container]") ||
+    document.querySelector("#__next")?.firstChild)!;
 
-  const mercari_header = mercari_app.firstChild;
   mercari_header?.appendChild(react_entry_point);
 
   const script = document.createElement("script");
