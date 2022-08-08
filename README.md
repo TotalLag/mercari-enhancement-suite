@@ -1,5 +1,7 @@
 # mercari-enhancement-suite
+[![tests](https://github.com/TotalLag/mercari-enhancement-suite/actions/workflows/tests.yml/badge.svg)](https://github.com/TotalLag/mercari-enhancement-suite/actions/workflows/tests.yml)
 [![build](https://github.com/TotalLag/mercari-enhancement-suite/actions/workflows/build.yml/badge.svg)](https://github.com/TotalLag/mercari-enhancement-suite/actions/workflows/build.yml)
+[![release](https://github.com/TotalLag/mercari-enhancement-suite/actions/workflows/release.yml/badge.svg)](https://github.com/TotalLag/mercari-enhancement-suite/actions/workflows/release.yml)
 
 Community-driven unofficial browser extension for Mercari
 
