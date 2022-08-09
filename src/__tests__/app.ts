@@ -62,8 +62,8 @@ test("loads the page and find script url", async (t) => {
 test("fix blurry images", async (t) => {
   const options = {
     files: "./public/js/app.js",
-    from: /(e.next=5,)(g\(n,r,i\);)/g,
-    to: `$1r.width=n.width,r.height=n.height,document.dispatchEvent(new CustomEvent("ping", { detail: { type: "toast", msg: "higher resolution captured ✅" } })),$2`,
+    from: /(,t.aspect_ratio=s\)}\)\(n,e\);)(const i=\(await u\(n,e,r\)\))/g,
+    to: `$1e.width=n.width;e.height=n.height;document.dispatchEvent(new CustomEvent("ping", { detail: { type: "toast", msg: "higher resolution captured ✅" } }));$2`,
   };
 
   const results = await replace(options);
