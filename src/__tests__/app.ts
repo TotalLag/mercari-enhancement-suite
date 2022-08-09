@@ -9,6 +9,7 @@ const fetch = require("cross-fetch");
 const headers = new fetch.Headers({
   "User-Agent":
     "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; FSL 7.0.6.01001)",
+  "Cache-Control": "no-cache",
 });
 
 var appVersion: string;
