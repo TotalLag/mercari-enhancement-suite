@@ -37,7 +37,7 @@ test('loads the page and find script url', async (t) => {
   test('update version check', { skip: !updated }, async (t) => {
     const options = {
       files: './src/utils.ts',
-      from: /(const checkVersion: string = ")(.*)(")/g,
+      from: /(const checkVersion: string = ')(.*)(')/g,
       to: `$1${appVersion}$3`,
     }
 
