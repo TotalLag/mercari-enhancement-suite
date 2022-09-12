@@ -1,4 +1,4 @@
-@import "./mercari.css";
+@import './mercari.css';
 
 /* Custom Dark Mode Toggle Element */
 
@@ -43,7 +43,7 @@
 .slider:before {
   background-color: #fff;
   bottom: 4px;
-  content: "";
+  content: '';
   height: 20px;
   left: 4px;
   position: absolute;
