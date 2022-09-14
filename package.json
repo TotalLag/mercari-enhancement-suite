@@ -23,7 +23,7 @@
   },
   "devDependencies": {
     "@types/chrome": "^0.0.196",
-    "@types/react": "^18.0.19",
+    "@types/react": "^18.0.20",
     "@types/react-dom": "^18.0.6",
     "@types/tape": "^4.13.2",
     "cheerio": "^1.0.0-rc.12",
