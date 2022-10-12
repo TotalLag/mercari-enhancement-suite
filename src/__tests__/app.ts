@@ -15,7 +15,7 @@ const headers = new fetch.Headers({
 var appVersion: string
 var updated: boolean = false
 
-test('loads the page and find script url', async (t) => {
+test('loads the page and find script url', async t => {
   const source = await fetch('https://www.mercari.com/sell/', { headers })
   const html = await source.text()
   const $ = cheerio.load(html)
@@ -34,7 +34,7 @@ test('loads the page and find script url', async (t) => {
   t.ok(existsSync('./public/js/app.js'), 'Downloaded the asset')
   t.end()
 
-  test('update version check', { skip: !updated }, async (t) => {
+  test('update version check', { skip: !updated }, async t => {
     const options = {
       files: './src/utils.ts',
       from: /(const checkVersion: string = ')(.*)(')/g,
@@ -46,7 +46,7 @@ test('loads the page and find script url', async (t) => {
     t.end()
   })
 
-  test('update manifest', { skip: !updated }, async (t) => {
+  test('update manifest', { skip: !updated }, async t => {
     const options = {
       files: ['./public/manifest.json', './package.json'],
       from: /("version": ")(.*)(")/g,
@@ -59,10 +59,10 @@ test('loads the page and find script url', async (t) => {
   })
 })
 
-test('fix blurry images', async (t) => {
+test('fix blurry images', async t => {
   const options = {
     files: './public/js/app.js',
-    from: /(e.next=5,)(y\(t,i,r\))/g,
+    from: /(e.next=5,)(S\(t,i,r\))/g,
     to: `$1(t.height>2880?(i.height=2880,i.width=Math.floor(2880*t.width/t.height),(t.width>3840??(i.height=Math.floor(3840*t.height/t.width),i.width=3840))):(i.width=t.width,i.height=t.height)),document.dispatchEvent(new CustomEvent("ping", { detail: { type: "toast", msg: "higher resolution captured ✅" } })),$2`,
   }
 
