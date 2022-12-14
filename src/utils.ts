@@ -1,4 +1,4 @@
-export const checkVersion: string = '1.23.60'
+export const checkVersion: string = '1.23.61'
 
 export const sleep = (delay: number) =>
   new Promise((resolve) => setTimeout(resolve, delay))
