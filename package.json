@@ -24,7 +24,7 @@
   "devDependencies": {
     "@types/chrome": "^0.0.206",
     "@types/react": "^18.0.26",
-    "@types/react-dom": "^18.0.9",
+    "@types/react-dom": "^18.0.10",
     "@types/tape": "^4.13.2",
     "cheerio": "^1.0.0-rc.12",
     "chrome-api-mock": "^0.0.2",
