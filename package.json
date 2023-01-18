@@ -22,8 +22,8 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@types/chrome": "^0.0.208",
-    "@types/react": "^18.0.26",
+    "@types/chrome": "^0.0.209",
+    "@types/react": "^18.0.27",
     "@types/react-dom": "^18.0.10",
     "@types/tape": "^4.13.2",
     "cheerio": "^1.0.0-rc.12",
