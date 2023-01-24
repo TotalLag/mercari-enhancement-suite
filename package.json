@@ -22,7 +22,7 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@types/chrome": "^0.0.209",
+    "@types/chrome": "^0.0.210",
     "@types/react": "^18.0.27",
     "@types/react-dom": "^18.0.10",
     "@types/tape": "^4.13.2",
