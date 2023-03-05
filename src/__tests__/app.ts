@@ -15,7 +15,7 @@ const headers = new fetch.Headers({
 var appVersion: string
 var updated: boolean = false
 
-test('loads the page and find script url', async (t) => {
+test('loads the page and find script url', async t => {
   const source = await fetch('https://www.mercari.com/sell/', { headers })
   const html = await source.text()
   const $ = cheerio.load(html)
@@ -34,7 +34,7 @@ test('loads the page and find script url', async (t) => {
   t.ok(existsSync('./public/js/app.js'), 'Downloaded the asset')
   t.end()
 
-  test('update version check', { skip: !updated }, async (t) => {
+  test('update version check', { skip: !updated }, async t => {
     const options = {
       files: './src/utils.ts',
       from: /(const checkVersion: string = ')(.*)(')/g,
@@ -46,7 +46,7 @@ test('loads the page and find script url', async (t) => {
     t.end()
   })
 
-  test('update manifest', { skip: !updated }, async (t) => {
+  test('update manifest', { skip: !updated }, async t => {
     const options = {
       files: ['./public/manifest.json', './package.json'],
       from: /("version": ")(.*)(")/g,
@@ -59,11 +59,11 @@ test('loads the page and find script url', async (t) => {
   })
 })
 
-test('fix blurry images', async (t) => {
+test('fix blurry images', async t => {
   const options = {
     files: './public/js/app.js',
-    from: /(e.next=5,)(S\(n,r,i\))/g,
-    to: `$1(n.height>2880?(r.height=2880,r.width=Math.floor(2880*n.width/n.height),(n.width>3840??(r.height=Math.floor(3840*n.height/n.width),r.width=3840))):(r.width=n.width,r.height=n.height)),document.dispatchEvent(new CustomEvent("ping", { detail: { type: "toast", msg: "higher resolution captured ✅" } })),$2`,
+    from: /(p\(r,e\);)(let o=await b\(r,e,i\),a=o.toDataURL\("image\/jpeg"\);)/g,
+    to: `$1(r.height>2880?(e.height=2880,e.width=Math.floor(2880*r.width/r.height),(r.width>3840??(e.height=Math.floor(3840*r.height/r.width),e.width=3840))):(e.width=r.width,e.height=r.height)),document.dispatchEvent(new CustomEvent("ping", { detail: { type: "toast", msg: "higher resolution captured ✅" } }));$2`,
   }
 
   const results = await replace(options)
