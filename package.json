@@ -33,7 +33,7 @@
     "css-loader": "^6.7.3",
     "esbuild-loader": "^2.21.0",
     "glob": "^8.1.0",
-    "mini-css-extract-plugin": "^2.7.3",
+    "mini-css-extract-plugin": "^2.7.4",
     "replace-in-file": "^6.3.5",
     "rimraf": "^4.4.0",
     "style-loader": "^3.3.2",
