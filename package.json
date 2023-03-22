@@ -25,7 +25,7 @@
     "@types/chrome": "^0.0.224",
     "@types/react": "^18.0.28",
     "@types/react-dom": "^18.0.11",
-    "@types/tape": "^4.13.2",
+    "@types/tape": "^4.13.3",
     "cheerio": "^1.0.0-rc.12",
     "chrome-api-mock": "^0.0.2",
     "copy-webpack-plugin": "^11.0.0",
