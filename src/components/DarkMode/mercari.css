@@ -15,9 +15,7 @@
 [data-theme='dark'] [class*='ChatItemStatus'],
 [data-theme='dark'] [class*='Footer'] a,
 [data-theme='dark']
-  button:not(:where([aria-haspopup='true'])):not(
-    :where([class*='LightHeader'])
-  ):not(:where([class*='BaseButton'])) {
+  button:not(:where([aria-haspopup='true'])):not(:where([class*='LightHeader'])):not(:where([class*='BaseButton'])) {
   color: var(--color-grey-4);
 }
 [data-theme='dark'] .privacy_notice table,
@@ -31,9 +29,7 @@
 [data-theme='dark'] [class*='SearchesContainer'],
 [data-theme='dark'] .table-row,
 [data-theme='dark']
-  input:not(:where([type='search'])):not(:where([type='checkbox'])):not(
-    :where([placeholder*='Search'])
-  ),
+  input:not(:where([type='search'])):not(:where([type='checkbox'])):not(:where([placeholder*='Search'])),
 [data-theme='dark'] textarea,
 [data-theme='dark'] label[data-testid] > div[class*='Flex'],
 [data-theme='dark'] div[color='white'] {
