@@ -32,7 +32,7 @@
     "cross-fetch": "^3.1.6",
     "css-loader": "^6.8.1",
     "esbuild-loader": "^2.21.0",
-    "glob": "^10.2.6",
+    "glob": "^10.2.7",
     "mini-css-extract-plugin": "^2.7.6",
     "replace-in-file": "^6.3.5",
     "rimraf": "^5.0.1",
