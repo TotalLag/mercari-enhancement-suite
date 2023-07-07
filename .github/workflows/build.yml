@@ -14,31 +14,64 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
+    env:
+      DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+      WORKFLOW_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+
     if: github.event.workflow_run.conclusion == 'success'
     steps:
+    - id: start-notification
+      if: always()
+      run: |
+        echo "::set-output name=startTime::$(date +%s)"
+
+    - name: Notify Workflow Start
+      if: always()
+      run: |
+        curl -X POST -H "Content-Type: application/json" -d '{"content": "Workflow [`${{ github.repository }}/${{ github.workflow }}`](${{ env.WORKFLOW_URL }}) started."}' $DISCORD_WEBHOOK
+
     - uses: actions/checkout@v3
       with:
         ref: 'main'
+
     - name: Use Node.js 16.x
       uses: actions/setup-node@v3
       with:
         node-version: '16.20.1'
+
     - name: Cache dependencies
       uses: actions/cache@v3
       with:
         path: ~/.npm
         key: npm-${{ hashFiles('package-lock.json') }}
         restore-keys: npm-
+
     - run: npm ci
     - run: npm run test:app
     - run: npm run build
+
     - name: get-npm-version
       id: package-version
       uses: martinbeentjes/npm-get-version-action@main
+
     - uses: montudor/action-zip@v1
       with:
         args: zip -qq -r mercari-enhancement-suite-${{ steps.package-version.outputs.current-version }}.zip dist
+
     - uses: actions/upload-artifact@v3
       with:
         name: mercari-enhancement-suite-artifacts
         path: "*.zip"
+
+    - name: Notify via Discord
+      if: ${{ always() }}
+      env:
+        WORKFLOW_STATUS: ${{ job.status }}
+      run: |
+        endTime=$(date +%s)
+        duration=$((endTime - ${{ steps.start-notification.outputs.startTime }}))
+        hours=$((duration / 3600))
+        minutes=$((duration % 3600 / 60))
+        seconds=$((duration % 60))
+        durationFormatted=$(printf "%dh %dm %ds" $hours $minutes $seconds)
+        curl -X POST -H "Content-Type: application/json" -d "{\"content\": \"Workflow [\`${{ github.repository }}/${{ github.workflow }}\`](${{ env.WORKFLOW_URL }}) finished with status: \`${{ env.WORKFLOW_STATUS }}\` in ${durationFormatted}.\"}" $DISCORD_WEBHOOK
