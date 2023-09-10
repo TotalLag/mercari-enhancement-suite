@@ -37,7 +37,7 @@ jobs:
       run: |
         curl -X POST -H "Content-Type: application/json" -d '{"content": "Workflow [`${{ github.repository }}/${{ github.workflow }}`](${{ env.WORKFLOW_URL }}) started."}' $DISCORD_WEBHOOK
 
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
       with:
         ref: 'main'
 
