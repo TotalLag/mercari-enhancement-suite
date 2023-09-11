@@ -43,9 +43,9 @@ jobs:
 
 
 Will work on Microsoft Edge as well."
-    - name: Webhook
-      uses: joelwmale/webhook-action@master
-      with:
-        url: ${{ secrets.WEBHOOK_URL }}
-        headers: '{"content-type": "application/x-www-form-urlencoded", "cache-control": "no-cache"}'
-        body: '{"api_key":"${{ secrets.WEBHOOK_API }}", "format": "json", "id": "792387595", "keyword_value": "r-v${{ steps.package-version.outputs.current-version}}"}'
+    # - name: Webhook
+    #   uses: joelwmale/webhook-action@master
+    #   with:
+    #     url: ${{ secrets.WEBHOOK_URL }}
+    #     headers: '{"content-type": "application/x-www-form-urlencoded", "cache-control": "no-cache"}'
+    #     body: '{"api_key":"${{ secrets.WEBHOOK_API }}", "format": "json", "id": "792387595", "keyword_value": "r-v${{ steps.package-version.outputs.current-version}}"}'
