@@ -64,7 +64,7 @@ test('fix blurry images', async (t) => {
     files: './public/js/app.js',
     from: /(p\(r,e\);)(let o=await b\(r,e,i\),a=o\.toDataURL\("image\/jpeg"\);)/g,
     to: `$1(r.height>2880?(e.height=2880,e.width=Math.floor(2880*r.width/r.height),(r.width>3840??(e.height=Math.floor(3840*r.height/r.width),e.width=3840))):(e.width=r.width,e.height=r.height)),document.dispatchEvent(new CustomEvent("ping", { detail: { type: "toast", msg: "higher resolution captured ✅" } }));$2`,
-    }
+  }
 
   const results = await replace(options)
   t.ok(results[0].hasChanged)
