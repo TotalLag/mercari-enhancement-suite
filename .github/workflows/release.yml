@@ -47,9 +47,10 @@ jobs:
         SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
         SLACK_USERNAME: release-bot
         SLACK_COLOR: ${{ job.status}}
-        SLACK_ICON: https://icons8.com/icon/sz8cPVwzLrMP/check-mark
+        SLACK_ICON: https://img.icons8.com/emoji/48/check-mark-emoji.png
         MSG_MINIMAL: true
-        SLACK_MESSAGE:
+        SLACK_MESSAGE: |-
+          Download link
           https://github.com/FableStitch/mercari-enhancement-suite/releases/download/v${{ steps.package-version.outputs.current-version }}/mercari-enhancement-suite-${{ steps.package-version.outputs.current-version }}.zip
     - name: Slack Notify of Failure
       uses: rtCamp/action-slack-notify@v2
@@ -57,5 +58,6 @@ jobs:
       env:
         SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
         SLACK_USERNAME: release-bot
-        SLACK_ICON: https://icons8.com/icon/T9nkeADgD3z6/cross-mark
+        SLACK_ICON: https://img.icons8.com/emoji/48/cross-mark-emoji.png
         SLACK_COLOR: ${{ job.status}}
+        SLACK_MESSAGE: Failure! Check the logs for more details.
