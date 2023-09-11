@@ -21,7 +21,8 @@ concurrency:
 jobs:
   tests:
     runs-on: ubuntu-latest
-
+    permissions:
+      contents: write
     env:
       DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
       WORKFLOW_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
