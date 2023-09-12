@@ -17,7 +17,7 @@ export const versionCheck = async function (): Promise<string> {
     const scriptTags = $('script[src*=_app]')
     const appURL = scriptTags.first().attr('src')
     appVersion = (appURL?.match(/\/*(?:^v)?\d+(?:\.\d+)+/) ?? '')[0]
-    console.log(">>v" + appVersion)
+    console.log("v" + appVersion)
     return appVersion  
 }
 
