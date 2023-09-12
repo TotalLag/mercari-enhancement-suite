@@ -20,5 +20,5 @@ jobs:
                     restore-keys: npm-
             - run: npm ci
             - name: github.ref_name output
-                run: echo ${{ github.ref_name }}
+              run: echo ${{ github.ref_name }}
             - run: npm run get-latest-version 
