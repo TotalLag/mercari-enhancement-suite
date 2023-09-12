@@ -8,7 +8,7 @@ jobs:
         steps:
             - uses: actions/checkout@v4
               with:
-                fetch-tags: true
+                fetch-tags: 'true'
             - name: Use Node.js 16.x
               uses: actions/setup-node@v3
               with:
