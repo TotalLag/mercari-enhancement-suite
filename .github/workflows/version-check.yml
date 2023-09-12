@@ -5,6 +5,8 @@ on:
 jobs:
     check-for-new-version:
         runs-on: ubuntu-latest
+        outputs:
+          newVersion: ${{ steps.get-latest-version.outputs.newVersion }}
         steps:
             - uses: actions/checkout@v4
               with:
@@ -24,9 +26,34 @@ jobs:
               run: echo "tag=$(git tag --sort=-committerdate | head -n 1)" >> "$GITHUB_ENV"
             - name: get latest version
               run: echo "latest=$(npm run get-latest-version | tail -n 1)" >> "$GITHUB_ENV"
-            - name: compare versions
+            - name: versions are not equal!
+              id: newVersion
               if: ${{ env.tag != env.latest }}
-              run: echo "new version found. ${{ env.tag }} -> ${{ env.latest }}"
-            - name: opposite compare
+              run: |
+                echo "new version found. ${{ env.tag }} -> ${{ env.latest }}"
+                echo "newVersion=true" >> "$GITHUB_OUTPUT"
+            - name: versions are equal
               if: ${{ env.tag == env.latest }}
               run: echo "no new version found. ${{ env.tag }} == ${{ env.latest }}"
+    trigger-version-update:
+      runs-on: ubuntu-latest
+      needs: check-for-new-version
+      if: ${{ needs.check-for-new-version.outputs.newVersion == 'true' }}
+      steps:
+        - uses: actions/checkout@v4
+        - name: Use Node.js 16.x
+          uses: actions/setup-node@v3
+          with:
+            node-version: '16.20.1'
+        - run: npm ci
+        - name: npm run test
+          run: npm run test
+        - name: Slack Notify of Failure
+          uses: rtCamp/action-slack-notify@v2
+          if: failure()
+          env:
+            SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+            SLACK_USERNAME: release-bot
+            SLACK_ICON: https://img.icons8.com/emoji/48/cross-mark-emoji.png
+            SLACK_COLOR: ${{ job.status}}
+            SLACK_MESSAGE: There is a new version but the tests failed.
