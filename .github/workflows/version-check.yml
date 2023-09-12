@@ -19,6 +19,12 @@ jobs:
                     key: npm-${{ hashFiles('package-lock.json') }}
                     restore-keys: npm-
             - run: npm ci
-            - name: github.ref_name output
-              run: echo ${{ github.ref_name }}
-            - run: npm run get-latest-version 
+            - name: git tag sort by reverse committerdate
+              run: echo "tag=$(git tag --sort=-committerdate | head -n 1)" >> $GITHUB_ENV
+            - run: echo "latest=$(npm run get-latest-version)" >> $GITHUB_ENV
+            - name: compare versions
+              if: ${{ env.tag != env.latest }}
+              run: echo "new version found. ${{ env.tag }} -> ${{ env.latest }}"
+            - name: opposite compare
+              if: ${{ env.tag == env.latest }}
+              run: echo "no new version found. ${{ env.tag }} == ${{ env.latest }}"
