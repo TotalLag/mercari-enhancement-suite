@@ -6,7 +6,7 @@ jobs:
     check-for-new-version:
         runs-on: ubuntu-latest
         outputs:
-          newVersion: ${{ steps.get-latest-version.outputs.newVersion }}
+          newVersion: ${{ steps.newVersion.outputs.newVersion }}
         steps:
             - uses: actions/checkout@v4
               with:
