@@ -1,5 +1,4 @@
 on:
-    push:
     schedule:
         - cron: '*/15 * * * *'
 jobs:
@@ -37,6 +36,8 @@ jobs:
               run: echo "no new version found. ${{ env.tag }} == ${{ env.latest }}"
     trigger-version-update:
       runs-on: ubuntu-latest
+      permissions:
+        contents: write
       needs: check-for-new-version
       if: ${{ needs.check-for-new-version.outputs.newVersion == 'true' }}
       steps:
