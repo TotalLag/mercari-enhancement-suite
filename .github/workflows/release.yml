@@ -50,7 +50,7 @@ jobs:
         SLACK_ICON: https://img.icons8.com/emoji/48/check-mark-emoji.png
         MSG_MINIMAL: true
         SLACK_MESSAGE: |-
-          Download link
+          New Version Released: v${{ steps.package-version.outputs.current-version }}
           https://github.com/FableStitch/mercari-enhancement-suite/releases/download/v${{ steps.package-version.outputs.current-version }}/mercari-enhancement-suite-${{ steps.package-version.outputs.current-version }}.zip
     - name: Slack Notify of Failure
       uses: rtCamp/action-slack-notify@v2
