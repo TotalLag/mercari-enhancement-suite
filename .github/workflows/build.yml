@@ -2,7 +2,7 @@ name: build
 
 on:
   workflow_run:
-    workflows: ["tests"]
+    workflows: ["tests", "version-commit"]
     types:
       - completed
 
