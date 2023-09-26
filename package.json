@@ -35,7 +35,7 @@
     "glob": "^10.3.7",
     "mini-css-extract-plugin": "^2.7.6",
     "replace-in-file": "^7.0.1",
-    "rimraf": "^5.0.1",
+    "rimraf": "^5.0.4",
     "style-loader": "^3.3.3",
     "tape": "^5.7.0",
     "typescript": "^5.2.2",
