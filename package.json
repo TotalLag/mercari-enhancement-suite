@@ -31,7 +31,7 @@
     "copy-webpack-plugin": "^11.0.0",
     "cross-fetch": "^4.0.0",
     "css-loader": "^6.8.1",
-    "esbuild-loader": "^2.21.0",
+    "esbuild-loader": "^4.0.2",
     "glob": "^10.3.10",
     "mini-css-extract-plugin": "^2.7.6",
     "replace-in-file": "^7.0.1",
