@@ -1,6 +1,6 @@
 {
   "name": "mercari-enhancement-suite",
-  "version": "1.26.327",
+  "version": "1.26.331",
   "description": "Community-driven unofficial browser extension for Mercari",
   "main": "runtime.js",
   "scripts": {
