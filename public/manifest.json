@@ -2,7 +2,7 @@
   "name": "Mercari Enhancement Suite",
   "description": "Community-driven unofficial browser extension for Mercari",
   "homepage_url": "https://github.com/TotalLag/mercari-enhancement-suite",
-  "version": "1.26.390",
+  "version": "1.26.391",
   "manifest_version": 3,
   "icons": {
     "16": "icon16.png",
