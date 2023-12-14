@@ -58,7 +58,7 @@ jobs:
       with:
         args: zip -qq -r mercari-enhancement-suite-${{ steps.package-version.outputs.current-version }}.zip dist
 
-    - uses: actions/upload-artifact@v3
+    - uses: actions/upload-artifact@v4
       with:
         name: mercari-enhancement-suite-artifacts
         path: "*.zip"
