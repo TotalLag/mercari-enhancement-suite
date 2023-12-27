@@ -34,7 +34,7 @@
     "esbuild-loader": "^4.0.2",
     "glob": "^10.3.10",
     "mini-css-extract-plugin": "^2.7.6",
-    "replace-in-file": "^7.0.2",
+    "replace-in-file": "^7.1.0",
     "rimraf": "^5.0.5",
     "style-loader": "^3.3.3",
     "tape": "^5.7.2",
