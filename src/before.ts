@@ -28,12 +28,12 @@ import { checkVersion, getFromStorage, ToastSuccess } from './utils'
     if (e instanceof CustomEvent && e.detail) {
       switch (e.detail.type) {
         case 'toast':
-          await ToastSuccess(e.detail.msg, 2500);
-          break;
+          await ToastSuccess(e.detail.msg, 2500)
+          break
         default:
           // Handle unknown type or do nothing
-          break;
+          break
       }
     }
-  });  
+  })
 })()
