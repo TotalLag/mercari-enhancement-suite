@@ -34,10 +34,10 @@ jobs:
       with:
         ref: 'main'
 
-    - name: Use Node.js 16.x
+    - name: Use Node.js 20.x
       uses: actions/setup-node@v4
       with:
-        node-version: '16.20.1'
+        node-version: '20.10.0'
 
     - name: Cache dependencies
       uses: actions/cache@v3

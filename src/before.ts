@@ -25,10 +25,15 @@ import { checkVersion, getFromStorage, ToastSuccess } from './utils'
   }
 
   document.addEventListener('ping', async function (e: Event) {
-    switch ((<CustomEvent>e).detail.type) {
-      case 'toast':
-        await ToastSuccess((<CustomEvent>e).detail.msg, 2500)
-        break
+    if (e instanceof CustomEvent && e.detail) {
+      switch (e.detail.type) {
+        case 'toast':
+          await ToastSuccess(e.detail.msg, 2500);
+          break;
+        default:
+          // Handle unknown type or do nothing
+          break;
+      }
     }
-  })
+  });  
 })()
