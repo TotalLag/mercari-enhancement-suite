@@ -4,11 +4,11 @@ on:
   push:
     paths-ignore:
     - '*.md'
-    branches: [ main ]
+    branches: [ chatgpt-test ]
   pull_request:
     paths-ignore:
     - '*.md'
-    branches: [ main ]
+    branches: [ chatgpt-test ]
   workflow_dispatch:
   repository_dispatch:
     types:
@@ -39,12 +39,12 @@ jobs:
 
     - uses: actions/checkout@v4
       with:
-        ref: 'main'
+        ref: 'chatgpt-test'
 
-    - name: Use Node.js 16.x
+    - name: Use Node.js 20.x
       uses: actions/setup-node@v4
       with:
-        node-version: '16.20.1'
+        node-version: '20.10.0'
 
     - name: Cache dependencies
       uses: actions/cache@v4
@@ -56,6 +56,17 @@ jobs:
     - run: npm run style
     - run: npm ci
     - run: npm run test
+
+    - name: Extract Code Block
+      if: failure()
+      id: updatetest
+      run: |
+        OUTPUT=$(npm run test:extract | grep "sync()=>")
+        echo "::set-output name=extractCodeBlock::$OUTPUT"
+
+    - name: Run ChatGPT script
+      if: failure()
+      run: npm run chatgpt -- --openaiApiKey="${{ secrets.OPENAI_API_KEY }}" --githubToken="${{ secrets.YOUR_GITHUB_TOKEN }}" --githubRepo="${{ github.repository }}" --prId=${{ github.event.pull_request.number }} --extractCodeBlock="${{ steps.updatetest.outputs.extractCodeBlock }}"
 
     - if: github.ref == 'refs/heads/main'
       uses: stefanzweifel/git-auto-commit-action@v5
