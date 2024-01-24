@@ -9,7 +9,10 @@
     "clean": "rimraf dist && npx ts-node ./node_modules/tape/bin/tape 'src/clean.ts' | npx faucet",
     "test": "npx ts-node ./node_modules/tape/bin/tape 'src/__tests__/*.ts'",
     "test:app": "npx ts-node ./node_modules/tape/bin/tape 'src/__tests__/app.ts'",
-    "style": "npx prettier --write \"src/**/*.{ts,tsx,css}\""
+    "test:extract": "npx ts-node ./node_modules/tape/bin/tape 'src/__tests__/extractcode.ts'",
+    "update:test": "npx ts-node 'src/lib/extractregex.ts'",
+    "style": "npx prettier --write \"src/**/*.{ts,tsx,css}\"",
+    "chatgpt": "npx ts-node src/lib/chatgpt.ts"
   },
   "author": "Chris Phan <chris@phan.cx>",
   "license": "MIT",
@@ -18,14 +21,18 @@
     "url": "https://github.com/TotalLag/mercari-enhancement-suite"
   },
   "dependencies": {
+    "@octokit/rest": "^20.0.2",
+    "openai": "^4.25.0",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "yargs": "^17.7.2"
   },
   "devDependencies": {
     "@types/chrome": "^0.0.258",
     "@types/react": "^18.2.48",
     "@types/react-dom": "^18.2.18",
     "@types/tape": "^5.6.4",
+    "@types/yargs": "^17.0.32",
     "cheerio": "^1.0.0-rc.12",
     "chrome-api-mock": "^0.0.2",
     "copy-webpack-plugin": "^12.0.2",
