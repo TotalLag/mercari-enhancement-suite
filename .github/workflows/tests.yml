@@ -57,6 +57,20 @@ jobs:
     - run: npm ci
     - run: npm run test
 
+    - name: Extract Code Block
+      if: failure()
+      id: updatetest
+      run: |
+        OUTPUT=$(npm run update:test)
+        echo "::set-output name=extractCodeBlock::$OUTPUT"
+
+    - name: Run ChatGPT script
+      if: failure()
+      run: npm run chatgpt -- --openaiApiKey="${{ secrets.OPENAI_API_KEY }}" --githubToken="${{ secrets.GITHUB_TOKEN }}" --githubRepo="${{ github.repository }}" --prId=${{ github.event.pull_request.number }} --extractCodeBlock="${{ steps.updatetest.outputs.extractCodeBlock }}"
+      env:
+        OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
     - if: github.ref == 'refs/heads/main'
       uses: stefanzweifel/git-auto-commit-action@v5
 
