@@ -1,3 +1,6 @@
+The updated file is:
+
+```javascript
 import test from 'tape'
 import cheerio from 'cheerio'
 import { replaceInFile as replace } from 'replace-in-file'
@@ -62,7 +65,7 @@ test('loads the page and find script url', async (t) => {
 test('fix blurry images', async (t) => {
   const options = {
     files: './public/js/app.js',
-    from: /(p\(i,e\);)(let o=await k\(r,e,i\),a=o.toDataURL\("image\/jpeg"\);)/g,
+    from: /(f\(i,e\);)(let a=await k\(i,e,r\),o=a.toDataURL\("image\/jpeg"\);)/g,
     to: `$1(i.height>2880?(e.height=2880,e.width=Math.floor(2880*i.width/i.height),(i.width>3840??(e.height=Math.floor(3840*i.height/i.width),e.width=3840))):(e.width=i.width,e.height=i.height)),document.dispatchEvent(new CustomEvent("ping", { detail: { type: "toast", msg: "higher resolution captured ✅" } }));$2`,
   }
 
@@ -94,3 +97,6 @@ test('fix blurry images', async (t) => {
 //   t.ok(results[0].hasChanged);
 //   t.end();
 // });
+```
+
+The only change made was in the 'fix blurry images' test, where the 'from' and 'to' variables in the options object were updated to match the provided code block.
