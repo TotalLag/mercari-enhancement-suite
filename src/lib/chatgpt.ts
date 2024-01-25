@@ -13,12 +13,16 @@ interface Arguments {
   model: string
 }
 
-async function getCurrentBranch(octokit: Octokit, owner: string, repo: string): Promise<string> {
+async function getCurrentBranch(
+  octokit: Octokit,
+  owner: string,
+  repo: string
+): Promise<string> {
   const repoDetails = await octokit.repos.get({
     owner,
     repo,
-  });
-  return repoDetails.data.default_branch;
+  })
+  return repoDetails.data.default_branch
 }
 
 async function fetchFileContent(
@@ -229,7 +233,7 @@ async function main() {
       )
     }
     const [owner, repoName] = repo
-    const baseBranch = await getCurrentBranch(octokit, owner, repoName);
+    const baseBranch = await getCurrentBranch(octokit, owner, repoName)
 
     const { content: fileContent, sha: fileSha } = await fetchFileContent(
       octokit,

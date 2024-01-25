@@ -61,7 +61,7 @@ test('loads the page and find script url', async (t) => {
 })
 
 test('fix blurry images', async (t) => {
-  const results = await fixBlurryImages();
+  const results = await fixBlurryImages()
   t.ok(results[0].hasChanged)
   t.end()
 })
