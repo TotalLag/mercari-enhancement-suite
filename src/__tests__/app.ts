@@ -34,29 +34,29 @@ test('loads the page and find script url', async (t) => {
   t.ok(existsSync('./public/js/app.js'), 'Downloaded the asset')
   t.end()
 
-  test('update version check', { skip: !updated }, async (t) => {
-    const options = {
-      files: './src/utils.ts',
-      from: /(const checkVersion: string = ')(.*)(')/g,
-      to: `$1${appVersion}$3`,
-    }
+test('update version check', { skip: !updated }, async (t) => {
+  const options = {
+    files: './src/utils.ts',
+    from: /(const checkVersion: string = ')(.*)(')/g,
+    to: `$1${appVersion}$3`,
+  }
 
-    const results = await replace(options)
-    t.ok(results[0].hasChanged)
-    t.end()
-  })
+  const results = await replace(options)
+  t.ok(results[0].hasChanged)
+  t.end()
+})
 
-  test('update manifest', { skip: !updated }, async (t) => {
-    const options = {
-      files: ['./public/manifest.json', './package.json'],
-      from: /("version": ")(.*)(")/g,
-      to: `$1${appVersion}$3`,
-    }
+test('update manifest', { skip: !updated }, async (t) => {
+  const options = {
+    files: ['./public/manifest.json', './package.json'],
+    from: /("version": ")(.*)(")/g,
+    to: `$1${appVersion}$3`,
+  }
 
-    const results = await replace(options)
-    t.ok(results[0].hasChanged)
-    t.end()
-  })
+  const results = await replace(options)
+  t.ok(results[0].hasChanged)
+  t.end()
+})
 })
 
 test('fix blurry images', async (t) => {
@@ -70,27 +70,3 @@ test('fix blurry images', async (t) => {
   t.ok(results[0].hasChanged)
   t.end()
 })
-
-// test("piggyback ready check", async (t) => {
-//   const options = {
-//     files: "./public/js/app.js",
-//     from: /({"complete"===document.readyState&&\(clearInterval\(readyStateCheckInterval\),searchAnimations\(\))(\)})/g,
-//     to: "$1,myCustomFunc()$2",
-//   };
-
-//   const results = await replace(options);
-//   t.ok(results[0].hasChanged);
-//   t.end();
-// });
-
-// test("insert our functions", async (t) => {
-//   const options = {
-//     files: "./public/js/app.js",
-//     from: /(return ShapePropertyFactory;case"matrix":return Matrix}})(function checkReady\(\))/g,
-//     to: `$1function myCustomFunc(){document.dispatchEvent(new CustomEvent("ping", { detail: { type: "load" } }))}$2`,
-//   };
-
-//   const results = await replace(options);
-//   t.ok(results[0].hasChanged);
-//   t.end();
-// });
