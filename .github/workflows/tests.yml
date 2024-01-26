@@ -80,4 +80,4 @@ jobs:
         minutes=$((duration % 3600 / 60))
         seconds=$((duration % 60))
         durationFormatted=$(printf "%dh %dm %ds" $hours $minutes $seconds)
-        curl -X POST -H "Content-Type: application/json" -d "{\"content\": \"Workflow [\`${{ github.repository }}/${{ github.workflow }}\`](${{ env.WORKFLOW_URL }}) finished with status: \`${{ env.WORKFLOW_STATUS }}\` in ${durationFormatted}.\"}" $DISCORD_WEBHOOK
+        curl -X POST -H "Content-Type: application/json" -d "{\"content\": \"🚀 **Workflow** [\`${{ github.repository }}/${{ github.workflow }}\`](${{ env.WORKFLOW_URL }}) **Status**: \`${{ env.WORKFLOW_STATUS }}\` \n\n⏱️ **Duration**: ${durationFormatted}\"}" $DISCORD_WEBHOOK
