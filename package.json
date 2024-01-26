@@ -22,13 +22,13 @@
   },
   "dependencies": {
     "@octokit/rest": "^20.0.2",
-    "openai": "^4.25.0",
+    "openai": "^4.26.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "yargs": "^17.7.2"
   },
   "devDependencies": {
-    "@types/chrome": "^0.0.258",
+    "@types/chrome": "^0.0.259",
     "@types/react": "^18.2.48",
     "@types/react-dom": "^18.2.18",
     "@types/tape": "^5.6.4",
