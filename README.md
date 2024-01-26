@@ -16,6 +16,10 @@ Mercari makes buying and selling a breeze, but we've all bumped into those littl
 ## 📸 The Problem: Blurry Photos, Be Gone!
 Ever uploaded a photo on Mercari and found it mysteriously blurred? You're not alone. This extension started as a fix to the image quality issue – a small tweak with a big impact!
 
+![ss1](https://user-images.githubusercontent.com/1744428/181827628-040871f6-af32-432b-98e9-89b2b262e3ea.png)
+![ss4](https://user-images.githubusercontent.com/1744428/181829198-77d09489-0009-490d-8c7f-3824c9c06bc4.png)
+![image](https://user-images.githubusercontent.com/1744428/182087504-2ec6992b-eb4e-4bd9-8a56-36b0aaf9865c.png)
+
 ### In the Wild:
 - https://www.reddit.com/r/Mercari/comments/uigzpw/why_is_mercari_blurring_my_photos/
 - https://www.reddit.com/r/Mercari/comments/meqlxy/low_picture_quality_on_listings/
