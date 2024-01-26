@@ -1,42 +1,53 @@
-# mercari-enhancement-suite
+# Mercari Enhancement Suite
 [![tests](https://github.com/TotalLag/mercari-enhancement-suite/actions/workflows/tests.yml/badge.svg)](https://github.com/TotalLag/mercari-enhancement-suite/actions/workflows/tests.yml)
 [![build](https://github.com/TotalLag/mercari-enhancement-suite/actions/workflows/build.yml/badge.svg)](https://github.com/TotalLag/mercari-enhancement-suite/actions/workflows/build.yml)
 [![release](https://github.com/TotalLag/mercari-enhancement-suite/actions/workflows/release.yml/badge.svg)](https://github.com/TotalLag/mercari-enhancement-suite/actions/workflows/release.yml)
 
-Community-driven unofficial browser extension for Mercari
+🎉 Welcome to the community-driven, unofficial browser extension for Mercari! Enhancing your Mercari experience, one feature at a time.
 
-## About
-Mercari is a great way to buy and sell items. You can find just about anything on there, and it's usually very cheap. The only downside is that there are a few annoying bugs that haven't been fixed by Mercari. This extension fixes those bugs and eventually I plan to add features that are generally helpful. 
+## 🌟 About the Project
+Mercari makes buying and selling a breeze, but we've all bumped into those little bugs that can be a tad bit annoying. That's where the Mercari Enhancement Suite steps in - fixing what's bugging you and adding a sprinkle of extra features for a smoother experience!
 
-![ss1](https://user-images.githubusercontent.com/1744428/181827628-040871f6-af32-432b-98e9-89b2b262e3ea.png)
-![ss4](https://user-images.githubusercontent.com/1744428/181829198-77d09489-0009-490d-8c7f-3824c9c06bc4.png)
-![image](https://user-images.githubusercontent.com/1744428/182087504-2ec6992b-eb4e-4bd9-8a56-36b0aaf9865c.png)
+### Why This Project Rocks:
+- Fixes known issues not yet addressed by Mercari.
+- Regularly updated to keep up with Mercari's latest version.
+- Community-driven – your ideas help shape the future of this extension!
 
+## 📸 The Problem: Blurry Photos, Be Gone!
+Ever uploaded a photo on Mercari and found it mysteriously blurred? You're not alone. This extension started as a fix to the image quality issue – a small tweak with a big impact!
 
-## Why
-While uploading some photos from my Sony camera, I ran into an issue with image quality. Turns out I wasn't the only one running into it:
+### In the Wild:
 - https://www.reddit.com/r/Mercari/comments/uigzpw/why_is_mercari_blurring_my_photos/
 - https://www.reddit.com/r/Mercari/comments/meqlxy/low_picture_quality_on_listings/
 - https://www.reddit.com/r/Mercari/comments/r3064i/ive_noticed_that_the_quality_of_my_listing_images/
 - https://www.reddit.com/r/Mercari/comments/hm04nh/problems_with_picture_quality_when_uploading_from/
 - https://www.reddit.com/r/Mercari/comments/rfltj7/either_my_photos_are_to_clean_and_detailed_for/
 
-After some investigation, I found that the issue was caused by a discrepancy in the way that the browser's canvas was handling image resolution. As a result, I was able to fix the bug and improve image quality for myself. This extension is my attempt to scale that fix and make it maintainable. By using this extension, you can improve the image quality uploaded from a web browser for yourself as well.
+## 🚀 How It Works
+Staying ahead of the curve, we've got a CI/CD pipeline that tests and deploys updates, ensuring compatibility with the newest Mercari versions. 
 
-## How
-Mercari is constantly updating their app, which can make it difficult to keep up with the changes. I have implemented a CI/CD pipeline so that I can automatically test and deploy my code to ensure it is always compatible with the latest version of Mercari. A new release will automatically be posted when changes occur.
+### Heads Up! 
+Occasionally, you might notice a release marked as 'failed.' Don't worry, it's all part of the plan! These are typically updates to the libraries used for building the extension, not changes to Mercari's end. So, the core functionality remains steady as a rock.
 
-## Other
-I'm not sure how long the Chrome store approval process takes, which is why you have to manually install/update for the time being. I apologize for any inconvenience this may cause. Once the extension is approved, it will be available in the Chrome store and will update automatically.
+## 🤝 Join the Community
+Got ideas? We love them! Fork the repo, add your flavor, and let's make Mercari even better together.
 
-I am always looking for ways to streamline my workflow, improve my extensions and make them more helpful for users. If you have any suggestions, please let me know. Thanks for checking it out!
+### Contribution Made Easy:
+- Spot a bug? Have a feature idea? Jump in!
+- Everyone's welcome – from seasoned coders to enthusiastic beginners.
 
-Obviously please report bugs to Mercari first: contact@mercari.com - I am not affiliated with Mercari. I'm doing this for fun and educational purposes only.
+## 📌 Other Info
+- Chrome Store Status: Manual install/update for now. The frequency of updates from Mercari make it challenging to push through the store.
+- Disclaimer: Not affiliated with Mercari. This is a fun, educational community project. Found a bug? Reach out to Mercari first at contact@mercari.com.
 
-## Future
-Random annoyances I'd like to tackle in no particular order:
+## 🌈 What's Next?
+Here's a sneak peek at the future roadmap. Got ideas? Let's hear them!
+
 - [x] Higher resolution uploads
-- [ ] Stop autofill
-- [ ] Fix picture sorting
-- [ ] Keep weight the same
-- [x] Dark mode!
+- [ ] Stop autofill annoyance
+- [ ] Picture sorting made easy
+- [ ] Consistent weight input
+- [x] Dark Mode: Because everything's better in dark mode!
+
+### 🌟 Thank You!
+Your interest, contributions, and feedback make this project what it is. Together, we're enhancing Mercari for everyone. Enjoy shopping and selling!
