@@ -40,13 +40,13 @@
     "css-loader": "^6.10.0",
     "esbuild-loader": "^4.0.3",
     "glob": "^10.3.10",
-    "mini-css-extract-plugin": "^2.7.7",
+    "mini-css-extract-plugin": "^2.8.0",
     "replace-in-file": "^7.1.0",
     "rimraf": "^5.0.5",
     "style-loader": "^3.3.4",
     "tape": "^5.7.4",
     "typescript": "^5.3.3",
-    "webpack": "^5.90.0",
+    "webpack": "^5.90.1",
     "webpack-cli": "^5.1.4",
     "webpack-merge": "^5.10.0"
   }
