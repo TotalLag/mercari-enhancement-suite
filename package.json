@@ -22,7 +22,7 @@
   },
   "dependencies": {
     "@octokit/rest": "^20.0.2",
-    "openai": "^4.27.1",
+    "openai": "^4.28.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "yargs": "^17.7.2"
