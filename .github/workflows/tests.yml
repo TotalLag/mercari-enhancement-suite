@@ -27,6 +27,13 @@ jobs:
       WORKFLOW_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
 
     steps:
+    - name: Debug print github.ref
+      run: echo "The branch is ${{ github.ref }}"
+    - name: Debug print base branch name
+      run: echo "Base branch is ${{ github.base_ref }}"
+    - name: Debug print base branch name from event payload
+      run: echo "Base branch is ${{ github.event.pull_request.base.ref }}"
+
     - id: start-notification
       if: always()
       run: |
@@ -63,7 +70,7 @@ jobs:
         echo "::set-output name=extractCodeBlock::$OUTPUT"
 
     - name: Run ChatGPT script
-      if: failure()
+      if: failure()  && !contains(github.ref, 'merge') && !contains(github.event.pull_request.base.ref, 'main')
       run: npm run chatgpt -- --openaiApiKey="${{ secrets.OPENAI_API_KEY }}" --githubToken="${{ secrets.YOUR_GITHUB_TOKEN }}" --githubRepo="${{ github.repository }}" --prId=${{ github.event.pull_request.number }} --extractCodeBlock="${{ steps.updatetest.outputs.extractCodeBlock }}"
 
     - if: github.ref == 'refs/heads/main'

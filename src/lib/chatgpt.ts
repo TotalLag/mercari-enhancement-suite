@@ -241,13 +241,28 @@ async function main() {
     )
 
     const prompt = `
-      Given this incomplete code block:
+      Objective: You are tasked with updating a specific regex pattern in a block of code that deals with image processing, specifically a function that fixes blurry images.
+      
+      Given:
       ${argv.extractCodeBlock}
 
-      And the following code containing a function for fixing blurry images:
+      Current code containing a function with regex for fixing blurry images:
       ${fileContent}
 
-      Your task is to locate the 'fix blurry images' function in the provided code above and replace variables in the regex within this function to match those in the incomplete code block. Keep the original format of 'from: [regex]' and 'to: [code]'.
+      Expected Fix (dependent on existing variables):
+      /(f\(i,e\);)(let a=\(await k\(i,e,r\)\).toDataURL\("image\/jpeg"\);)/g
+
+      Your Task:
+      Locate the Function: Identify the function in your existing JavaScript code that is intended to fix blurry images. This function is currently represented in your regex as the portion of code immediately following f(i,e);.
+      Adjust the Regex:
+        - Current Behavior: Your current regex captures the function invocation and subsequent processing into two groups but lacks correct capturing for the asynchronous call and method chaining syntax.
+        - Required Adjustment: Modify the regex so it accurately reflects the asynchronous call and chaining syntax as demonstrated in your expected fix. This involves adjusting the capturing of the await statement and ensuring the method call to .toDataURL("image/jpeg") is correctly formatted within the regex.
+      Constraints:
+      Do not introduce new capturing groups in your regex. Maintain the original number of capturing groups, ensuring only necessary parts of the code are matched for replacement.
+      Do not optimize or refactor the existing JavaScript code or regex. The focus is on making the regex match the provided code structure accurately.
+      Pay special attention to how functions and methods are escaped and captured. For example, transforming a=(await) into a=\(await\) to correctly escape parentheses in the context of regex.
+      
+      If you do your BEST WORK, I'll tip you $100!
 
       Return the result as a JSON object with two keys:
       1. 'code': containing the entire updated file's code including the changes made to the 'fix blurry images' function.
