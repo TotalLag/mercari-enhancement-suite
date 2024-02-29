@@ -241,27 +241,20 @@ async function main() {
     )
 
     const prompt = `
-      Objective: You are tasked with updating a specific regex pattern in a block of code that deals with image processing, specifically a function that fixes blurry images.
+      You are provided with a block of JavaScript code that contains a function for image processing. This function includes a regex pattern that is used to identify and fix blurry images. The variables within this function may change dynamically.
+
+      Your task is to update the regex pattern to reflect the new variable names based on the provided dynamic code block. You must ensure that the updated regex pattern maintains the original logic and structure, accurately capturing the function calls and method chaining syntax.
       
-      Given:
+      Given the dynamic code block:
       ${argv.extractCodeBlock}
 
-      Current code containing a function with regex for fixing blurry images:
+      And the current regex pattern in the function:
       ${fileContent}
 
-      Expected Fix (dependent on existing variables):
-      /(f\(i,e\);)(let a=\(await k\(i,e,r\)\).toDataURL\("image\/jpeg"\);)/g
+      Identify the variables and function calls that need to be updated. Then, provide the updated regex pattern that matches the new code block.
 
-      Your Task:
-      Locate the Function: Identify the function in your existing JavaScript code that is intended to fix blurry images. This function is currently represented in your regex as the portion of code immediately following f(i,e);.
-      Adjust the Regex:
-        - Current Behavior: Your current regex captures the function invocation and subsequent processing into two groups but lacks correct capturing for the asynchronous call and method chaining syntax.
-        - Required Adjustment: Modify the regex so it accurately reflects the asynchronous call and chaining syntax as demonstrated in your expected fix. This involves adjusting the capturing of the await statement and ensuring the method call to .toDataURL("image/jpeg") is correctly formatted within the regex.
-      Constraints:
-      Do not introduce new capturing groups in your regex. Maintain the original number of capturing groups, ensuring only necessary parts of the code are matched for replacement.
-      Do not optimize or refactor the existing JavaScript code or regex. The focus is on making the regex match the provided code structure accurately.
-      Pay special attention to how functions and methods are escaped and captured. For example, transforming a=(await) into a=\(await\) to correctly escape parentheses in the context of regex.
-      
+      Remember to keep the number of capturing groups the same and to accurately escape special characters as needed. Your response should include the updated regex pattern and a brief explanation of the changes you made.
+
       If you do your BEST WORK, I'll tip you $100!
 
       Return the result as a JSON object with two keys:
