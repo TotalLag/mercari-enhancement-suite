@@ -33,6 +33,8 @@ jobs:
       run: echo "Base branch is ${{ github.base_ref }}"
     - name: Debug print base branch name from event payload
       run: echo "Base branch is ${{ github.event.pull_request.base.ref }}"
+    - name: Debug print head branch name
+      run: echo "Head branch is ${{ github.head_ref }}"
 
     - id: start-notification
       if: always()
@@ -70,7 +72,7 @@ jobs:
         echo "::set-output name=extractCodeBlock::$OUTPUT"
 
     - name: Run ChatGPT script
-      if: failure()  && !contains(github.ref, 'merge') && !contains(github.event.pull_request.base.ref, 'main')
+      if: failure()  && !contains(github.head_ref, 'hotfix-update-regex')
       run: npm run chatgpt -- --openaiApiKey="${{ secrets.OPENAI_API_KEY }}" --githubToken="${{ secrets.YOUR_GITHUB_TOKEN }}" --githubRepo="${{ github.repository }}" --prId=${{ github.event.pull_request.number }} --extractCodeBlock="${{ steps.updatetest.outputs.extractCodeBlock }}"
 
     - if: github.ref == 'refs/heads/main'
