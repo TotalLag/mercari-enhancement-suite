@@ -21,7 +21,7 @@
     "url": "https://github.com/TotalLag/mercari-enhancement-suite"
   },
   "dependencies": {
-    "@octokit/rest": "^20.0.2",
+    "@octokit/rest": "^20.1.0",
     "openai": "^4.32.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -30,14 +30,14 @@
   "devDependencies": {
     "@types/chrome": "^0.0.263",
     "@types/react": "^18.2.74",
-    "@types/react-dom": "^18.2.23",
+    "@types/react-dom": "^18.2.24",
     "@types/tape": "^5.6.4",
     "@types/yargs": "^17.0.32",
     "cheerio": "^1.0.0-rc.12",
     "chrome-api-mock": "^0.0.2",
     "copy-webpack-plugin": "^12.0.2",
     "cross-fetch": "^4.0.0",
-    "css-loader": "^6.10.0",
+    "css-loader": "^6.11.0",
     "esbuild-loader": "^4.1.0",
     "glob": "^10.3.12",
     "mini-css-extract-plugin": "^2.8.1",
