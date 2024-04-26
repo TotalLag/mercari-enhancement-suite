@@ -23,14 +23,14 @@
   "dependencies": {
     "@octokit/rest": "^20.1.0",
     "openai": "^4.38.5",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "react": "^18.3.0",
+    "react-dom": "^18.3.0",
     "yargs": "^17.7.2"
   },
   "devDependencies": {
     "@types/chrome": "^0.0.266",
-    "@types/react": "^18.2.79",
-    "@types/react-dom": "^18.2.25",
+    "@types/react": "^18.3.0",
+    "@types/react-dom": "^18.3.0",
     "@types/tape": "^5.6.4",
     "@types/yargs": "^17.0.32",
     "cheerio": "^1.0.0-rc.12",
