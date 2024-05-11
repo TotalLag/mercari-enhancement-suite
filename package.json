@@ -28,7 +28,7 @@
     "yargs": "^17.7.2"
   },
   "devDependencies": {
-    "@types/chrome": "^0.0.267",
+    "@types/chrome": "^0.0.268",
     "@types/react": "^18.3.1",
     "@types/react-dom": "^18.3.0",
     "@types/tape": "^5.6.4",
@@ -42,7 +42,7 @@
     "glob": "^10.3.14",
     "mini-css-extract-plugin": "^2.9.0",
     "replace-in-file": "^7.1.0",
-    "rimraf": "^5.0.5",
+    "rimraf": "^5.0.6",
     "style-loader": "^4.0.0",
     "tape": "^5.7.5",
     "typescript": "^5.4.5",
