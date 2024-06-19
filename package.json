@@ -22,7 +22,7 @@
   },
   "dependencies": {
     "@octokit/rest": "^20.1.1",
-    "openai": "^4.51.0",
+    "openai": "^4.52.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "yargs": "^17.7.2"
@@ -46,7 +46,7 @@
     "style-loader": "^4.0.0",
     "tape": "^5.8.1",
     "typescript": "^5.4.5",
-    "webpack": "^5.92.0",
+    "webpack": "^5.92.1",
     "webpack-cli": "^5.1.4",
     "webpack-merge": "^5.10.0"
   }
