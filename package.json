@@ -42,7 +42,7 @@
     "glob": "^10.4.5",
     "mini-css-extract-plugin": "^2.9.0",
     "replace-in-file": "^7.2.0",
-    "rimraf": "^5.0.9",
+    "rimraf": "^6.0.1",
     "style-loader": "^4.0.0",
     "tape": "^5.8.1",
     "typescript": "^5.5.3",
