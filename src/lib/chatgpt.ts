@@ -241,29 +241,33 @@ async function main() {
     )
 
     const prompt = `
-      You are provided with a block of JavaScript code that contains a function for image processing. This function includes a regex pattern that is used to identify and fix blurry images. The variables within this function may change dynamically.
-
-      Your task is to update the regex pattern to reflect the new variable names based on the provided dynamic code block. You must ensure that the updated regex pattern maintains the original logic and structure, accurately capturing the function calls and method chaining syntax.
-      
-      Given the dynamic code block:
-      ${argv.extractCodeBlock}
-
-      And the current regex pattern in the function:
-      ${fileContent}
-
-      Identify the variables and function calls that need to be updated. Then, provide the updated regex pattern that matches the new code block.
-
-      Remember to keep the number of capturing groups the same and to accurately escape special characters as needed. Your response should include the updated regex pattern and a brief explanation of the changes you made.
-
-      If you do your BEST WORK, I'll tip you $100!
-
-      Return the result as a JSON object with two keys:
-      1. 'code': containing the entire updated file's code including the changes made to the 'fix blurry images' function.
-      2. 'explanation': a brief explanation of the changes made or why no change was necessary.
-
-      Note: Do not alter or remove backslashes in comments, keep all comments as they are. Do not make changes outside of the function.
-
-      Do not provide any direct response outside this JSON object format. Batch your generation.`
+    You are provided with a JavaScript code snippet that contains a function for image processing. This function includes a regex pattern used to identify and fix blurry images. Your task is to update the regex pattern to reflect any changes in the code structure, variable names, or function calls.
+    
+    Given the dynamic code block:
+    ${argv.extractCodeBlock}
+    
+    And the current regex pattern in the function:
+    ${fileContent}
+    
+    Focus on updating the regex to match the structure of the code in the dynamic code block. The regex should capture two main parts:
+    1. The function call that processes the image (currently 'l(n,e);')
+    2. The statement that creates a data URL from the processed image (currently 'let r=(await h(n,e,i)).toDataURL("image/jpeg");')
+    
+    Identify any changes in variable names, function calls, or structure in these parts. Then, provide an updated regex pattern that matches the new code block, keeping the overall structure and capturing groups intact.
+    
+    Remember:
+    1. Update the entire regex pattern as needed.
+    2. Keep the number of capturing groups the same (two main groups).
+    3. Accurately escape special characters as needed.
+    4. The regex should be flexible enough to accommodate minor variations in whitespace or semicolon placement.
+    
+    Return the result as a JSON object with two keys:
+    1. 'code': containing the entire updated file's code, including the necessary changes to the regex pattern.
+    2. 'explanation': a brief explanation of the specific changes made to the regex or why no change was necessary.
+    
+    Note: Do not alter or remove backslashes in comments, keep all comments as they are. Do not make changes outside of the regex pattern.
+    
+    Do not provide any direct response outside this JSON object format. Batch your generation.`
 
     const responseJson = await getOpenAIResponse(openai, prompt, argv.model)
 
