@@ -8,17 +8,18 @@ import { fixBlurryImages } from './fixblurryimages'
 const fetch = require('cross-fetch')
 
 const headers = new fetch.Headers({
-  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.0.0 Safari/537.36',
+  'User-Agent':
+    'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.0.0 Safari/537.36',
   'Cache-Control': 'no-cache',
   'Accept-Language': 'en-US,en;q=0.9',
   'Accept-Encoding': 'gzip, deflate, br',
-});
+})
 
 var appVersion: string
 var updated: boolean = false
 
 test('loads the page and find script url', async (t) => {
-  await sleep(Math.random() * 5000);
+  await sleep(Math.random() * 5000)
   const source = await fetch('https://www.mercari.com/sell/', { headers })
   const html = await source.text()
   const $ = load(html)
