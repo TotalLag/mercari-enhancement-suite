@@ -44,7 +44,7 @@
     "replace-in-file": "^7.2.0",
     "rimraf": "^6.0.1",
     "style-loader": "^4.0.0",
-    "tape": "^5.8.1",
+    "tape": "^5.9.0",
     "typescript": "^5.6.2",
     "webpack": "^5.94.0",
     "webpack-cli": "^5.1.4",
